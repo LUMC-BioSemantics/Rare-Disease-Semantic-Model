@@ -1,0 +1,201 @@
+@prefix : <http://rdf.biosemantics.org/owl/2015/6/rdc-biobank-registry#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rdf.biosemantics.org/ontologies/rd-connect/rdc-core> .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/rdc-core> rdf:type owl:Ontology ;
+                                                             
+                                                             rdfs:label "rd-connect biobank-registry ontology"^^xsd:string ;
+                                                             
+                                                             rdfs:comment "Ontology reflecting the key concepts for connecting biobanks and registries for rare disease use cases and the RD-Connect platform"^^xsd:string ;
+                                                             
+                                                             pav:contributedBy "http://orcid.org/0000-0002-1215-167X"^^xsd:anyURI ,
+                                                                               "http://orcid.org/0000-0002-2440-3993"^^xsd:anyURI ;
+                                                             
+                                                             pav:createdBy "http://orcid.org/0000-0002-8691-772X"^^xsd:anyURI ;
+                                                             
+                                                             rdfs:seeAlso "https://docs.google.com/drawings/d/1XPPwVenEs1cdNXPgSRXRY5s8qDXi_d5L_9RA3iJWUQE/edit?usp=sharing"^^xsd:anyURI ;
+                                                             
+                                                             owl:versionIRI <http://rdf.biosemantics.org/ontologies/rd-connect/rdc-core> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/pav/contributedBy
+
+pav:contributedBy rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/pav/createdBy
+
+pav:createdBy rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/terms/identifier
+
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
+                                      
+                                      rdfs:label "identifier value" ;
+                                      
+                                      rdfs:comment "Defined by Dublin Core identifier" .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Person ID"@en ;
+                                                                                         
+                                                                                         rdfs:comment "any identifier for a person" .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/e961c95d_6559_4b34_a1a9_1de2b8eb4384
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/e961c95d_6559_4b34_a1a9_1de2b8eb4384> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Patient registry ID"@en ;
+                                                                                         
+                                                                                         rdfs:comment "Identifier for a collection (registry) of information about patients" .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/1a64601d_d26f_4bf1_8911_4c372c2053be
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/1a64601d_d26f_4bf1_8911_4c372c2053be> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Experimental process ID"@en ;
+                                                                                         
+                                                                                         rdfs:comment "included here to distinguish between the actual process of an experiment (this class) and the research object generally referred to by 'Experiment' in the RD-Connect platform (thanks to David van Enckevort for the feedback)." .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Specimen ID"@en ;
+                                                                                         
+                                                                                         rdfs:comment "Definition from EFO for specimen: A material which is obtained and stored for potential use during an investigation." ,
+                                                                                                      """Sample and specimen seem to be used interchangably in our domain, but in ontologies these terms typically refer to different concepts. After discussing with David van Enckevort it seems that 'specimen' is the correct concept for the RD model. 'Sample' is used to denote a subset of things to represent a population. These are not specimen. 
+Subclasses of Specimen may still have 'sample' as their label, if that is the term used in the resource from which it comes (e.g. EGA samples).""" .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/27f64853_1c9c_476c_8e58_e5b01e3d1afa
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/27f64853_1c9c_476c_8e58_e5b01e3d1afa> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Patient ID"@en ;
+                                                                                         
+                                                                                         rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742> ;
+                                                                                         
+                                                                                         rdfs:comment "an identifier for a person designated as a patient" .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/5aeda71b_13d1_4d3a_a582_b0426d0b58a3
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/5aeda71b_13d1_4d3a_a582_b0426d0b58a3> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Patient registry organisation ID"@en ;
+                                                                                         
+                                                                                         rdfs:comment "Identifier for an organisation that maintains (owns) a collection of information about patients" .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/6e18d2bd_cd20_468b_a508_fab520841b93
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/6e18d2bd_cd20_468b_a508_fab520841b93> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Phenotyped person ID"@en ;
+                                                                                         
+                                                                                         rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742> ;
+                                                                                         
+                                                                                         rdfs:comment "an identifier for a person of whom a phenotype was determined in a tool such as Phenotips. In the tool the label for the ID may have been patient ID." .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Donor ID"@en ;
+                                                                                         
+                                                                                         rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742> ;
+                                                                                         
+                                                                                         rdfs:comment "an identifier for a person who donated something (in the context of biobanks, a sample from his/her body)" .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/666d2bc5_b025_4e59_a8ef_d2b162afbf63
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/666d2bc5_b025_4e59_a8ef_d2b162afbf63> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Biobank sample or data collection ID"@en .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/85f0b0ee_ac93_4149_9c68_b2b1577d28c0
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/85f0b0ee_ac93_4149_9c68_b2b1577d28c0> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Biobank organisation ID"@en ;
+                                                                                         
+                                                                                         rdfs:comment "Identifier for organisation that maintains (owns) one or more sample or data collections." .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "Experiment ID"@en ;
+                                                                                         
+                                                                                         rdfs:comment "'Experiment' here, in the context of the RD-Connect platform, refers to more than just the experimental process, but to the research object of process, samples, and data (thanks to David van Enckevort for his feedback)." .
+
+
+
+###  http://rdf.biosemantics.org/ontologies/rd-connect/93e201d6_117d_4921_9f6c_185036efa986
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/93e201d6_117d_4921_9f6c_185036efa986> rdf:type owl:Class ;
+                                                                                         
+                                                                                         rdfs:label "EGA sample ID"@en ;
+                                                                                         
+                                                                                         rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a> .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
