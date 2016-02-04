@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://rdf.biosemantics.org/owl/2015/6/rdc-core" uri="rdc-core.owl"/>
+    <uri id="Imports Wizard Entry" name="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus" uri="http://rdf.biosemantics.org/owl/2015/7/untitled-ontology-39"/>
+    <uri id="Imports Wizard Entry" name="http://rdf.biosemantics.org/owl/2015/7/rdc-meta" uri="rdc-meta.owl"/>
+    <uri id="Imports Wizard Entry" name="http://rdf.biosemantics.org/owl/2015/6/rdc-core" uri="biobank-registry.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="duplicate:http://rdf.biosemantics.org/owl/2015/6/rdc-biobank-registry" uri="biobank-registry.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="duplicate:http://rdf.biosemantics.org/owl/2015/6/rdc-biobank-registry" uri="rdc-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="http://rdf.biosemantics.org/owl/2015/7/rdc-example-instances" uri="rdc-example-instances.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="http://rdf.biosemantics.org/owl/2015/7/rdc-mappings" uri="rdc-mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="http://rdf.biosemantics.org/owl/2015/7/rdc-meta" uri="rdc-meta.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="http://rdf.biosemantics.org/owl/2015/7/rdc-meta-extended" uri="rdc-meta-extended.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus" uri="rdc-thesaurus.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1439828956373" name="http://www.w3.org/2002/07/owl" uri="OBIB-copy.owl"/>
+    </group>
+</catalog>

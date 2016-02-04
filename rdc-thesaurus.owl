@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus#"
+     xml:base="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus">
+        <rdfs:comment>RD-Connect thesaurus for terminology mappings in SKOS. The intended purpose of this model is to allow term-based mappings, such to keep the other rdc ontologies OWL-DL.</rdfs:comment>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+        <rdfs:label>NCIT</rdfs:label>
+        <rdfs:comment>National Cancer Institute Thesaurus (USA)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15863 -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15863">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label>Cancer Biobank (NCIT)</rdfs:label>
+        <skos:inScheme rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+        <skos:broaderTransitive rdf:resource="http://rdf.biosemantics.org/rd-connect/04034694_68eb_4f42_90ce_dbc0c9bad7f9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16960 -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16960">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label>Patient (NCIT)</rdfs:label>
+        <skos:inScheme rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157 -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="en">Specimen (NCIT)</rdfs:label>
+        <skos:inScheme rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42790 -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42790">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label>Experiment (NCIT)</rdfs:label>
+        <rdfs:comment>NCIT: A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.</rdfs:comment>
+        <skos:inScheme rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48284 -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48284">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label>Donor (NCIT)</rdfs:label>
+        <rdfs:comment>From NCIT: One that contributes something.</rdfs:comment>
+        <skos:inScheme rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/116154003 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/116154003">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label>Patient (SNOMEDCT)</rdfs:label>
+        <rdfs:comment>Patient as defined by SNOMEDCT</rdfs:comment>
+        <skos:inScheme rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/123038009 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/123038009">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label>Specimen (SNOMEDCT)</rdfs:label>
+        <skos:inScheme rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/ad77077b_93ba_4c39_b320_bc115e87147c -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/ad77077b_93ba_4c39_b320_bc115e87147c">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="en">Experiment (RDCT)</rdfs:label>
+        <skos:exactMatch rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42790"/>
+        <skos:inScheme rdf:resource="http://rdf.biosemantics.org/rd-connect/8e927e8c_5d67_4b9a_8e39_dcb34c415d07"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/e3f9e829_8009_4cae_a255_041f3c11aaaa -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/e3f9e829_8009_4cae_a255_041f3c11aaaa">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="en">Sample (RDCT)</rdfs:label>
+        <skos:relatedMatch rdf:resource="http://rdf.biosemantics.org/rd-connect/29068527_71bf_4739_8cb0_7ebbbe148603"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/ff333ba9_6348_4126_b2d8_59044bb43d4d -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/ff333ba9_6348_4126_b2d8_59044bb43d4d">
+        <rdf:type rdf:resource="&skos;Collection"/>
+        <rdfs:label xml:lang="en">Rare Disease Platform Concept Collection</rdfs:label>
+        <skos:member rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15863"/>
+        <skos:member rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16960"/>
+        <skos:member rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157"/>
+        <skos:member rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42790"/>
+        <skos:member rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48284"/>
+        <skos:member rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/116154003"/>
+        <skos:member rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/123038009"/>
+        <skos:inScheme rdf:resource="http://rdf.biosemantics.org/rd-connect/ad77077b_93ba_4c39_b320_bc115e87147c"/>
+        <skos:member rdf:resource="http://rdf.biosemantics.org/rd-connect/e3f9e829_8009_4cae_a255_041f3c11aaaa"/>
+        <skos:member rdf:resource="http://rdf.biosemantics.org/rd-connect/04034694_68eb_4f42_90ce_dbc0c9bad7f9"/>
+        <skos:member rdf:resource="http://rdf.biosemantics.org/rd-connect/29068527_71bf_4739_8cb0_7ebbbe148603"/>
+        <skos:member rdf:resource="http://rdf.biosemantics.org/rd-connect/4dbc4a77_b7ce_4a98_8ff4_4ac3ff134284"/>
+        <skos:member rdf:resource="http://rdf.biosemantics.org/rd-connect/422b9e83_f36c_48dc_aee0_cd3d79160271"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/04034694_68eb_4f42_90ce_dbc0c9bad7f9 -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/04034694_68eb_4f42_90ce_dbc0c9bad7f9">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="en">Biobank (RDCT)</rdfs:label>
+        <skos:narrowerTransitive rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15863"/>
+        <skos:inScheme rdf:resource="http://rdf.biosemantics.org/rd-connect/8e927e8c_5d67_4b9a_8e39_dcb34c415d07"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/29068527_71bf_4739_8cb0_7ebbbe148603 -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/29068527_71bf_4739_8cb0_7ebbbe148603">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="en">Specimen (RDCT)</rdfs:label>
+        <skos:exactMatch rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157"/>
+        <skos:exactMatch rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/123038009"/>
+        <skos:relatedMatch rdf:resource="http://rdf.biosemantics.org/rd-connect/e3f9e829_8009_4cae_a255_041f3c11aaaa"/>
+        <skos:inScheme rdf:resource="http://rdf.biosemantics.org/rd-connect/8e927e8c_5d67_4b9a_8e39_dcb34c415d07"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/4dbc4a77_b7ce_4a98_8ff4_4ac3ff134284 -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/4dbc4a77_b7ce_4a98_8ff4_4ac3ff134284">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="en">Patient (RDCT)</rdfs:label>
+        <rdfs:comment>Patient as defined for the Rare Disease Platform</rdfs:comment>
+        <skos:exactMatch rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16960"/>
+        <skos:inScheme rdf:resource="http://rdf.biosemantics.org/rd-connect/ff333ba9_6348_4126_b2d8_59044bb43d4d"/>
+        <skos:exactMatch rdf:resource="http://rdf.biosemantics.org/rd-connect/ff333ba9_6348_4126_b2d8_59044bb43d4d"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/422b9e83_f36c_48dc_aee0_cd3d79160271 -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/422b9e83_f36c_48dc_aee0_cd3d79160271">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="en">Donor (RDCT)</rdfs:label>
+        <rdfs:comment>Donor as defined for the Rare Disease Platform</rdfs:comment>
+        <skos:closeMatch rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48284"/>
+        <skos:inScheme rdf:resource="http://rdf.biosemantics.org/rd-connect/8e927e8c_5d67_4b9a_8e39_dcb34c415d07"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/8e927e8c_5d67_4b9a_8e39_dcb34c415d07 -->
+
+    <owl:NamedIndividual rdf:about="http://rdf.biosemantics.org/rd-connect/8e927e8c_5d67_4b9a_8e39_dcb34c415d07">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+        <rdfs:label xml:lang="en">Rare Disease Platform Thesaurus</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY pav "http://purl.org/pav/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://rdf.biosemantics.org/owl/2015/7/rdc-mappings#"
+     xml:base="http://rdf.biosemantics.org/owl/2015/7/rdc-mappings"
+     xmlns:pav="http://purl.org/pav/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://rdf.biosemantics.org/owl/2015/7/rdc-mappings">
+        <rdfs:comment rdf:datatype="&xsd;string">Mappings to other commonly used ontologies.</rdfs:comment>
+        <pav:createdBy rdf:datatype="&xsd;anyURI">http://rdf.biosemantics.org/owl/2015/7/</pav:createdBy>
+        <owl:imports rdf:resource="http://rdf.biosemantics.org/owl/2015/6/rdc-core"/>
+        <owl:imports rdf:resource="http://rdf.biosemantics.org/owl/2015/7/rdc-meta"/>
+        <owl:imports rdf:resource="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://edamontology.org/data_0842 -->
+
+    <rdf:Description rdf:about="http://edamontology.org/data_0842">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0020000"/>
+    </rdf:Description>
+    <owl:Axiom>
+        <rdfs:comment>Justification of mapping: the EDAM superclass &apos;Data&apos; does not seem at odds with being an information artefact. I surmize that IAO:identifier can be equivalent to EDAM identifier, at least for our purposes.
+ToDo: consider replacing EDAM with IAO identifier as the default reference, i.e. replace in rdc-meta.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://edamontology.org/data_0842"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/IAO_0020000"/>
+        <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://edamontology.org/topic_3337 -->
+
+    <owl:Class rdf:about="http://edamontology.org/topic_3337">
+        <rdfs:label>Biobank</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/OMIABIS_0000000"/>
+        <rdfs:comment>Biobank as defined by EDAM: Repositories of biological samples, typically human, for basic biological and clinical research.</rdfs:comment>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Todo: check if it is wise to define these as equivalent.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://edamontology.org/topic_3337"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/OMIABIS_0000000"/>
+        <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0020000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0020000"/>
+    <owl:Axiom>
+        <rdfs:comment>Justification of mapping: the EDAM superclass &apos;Data&apos; does not seem at odds with being an information artefact. I surmize that IAO:identifier can be equivalent to EDAM identifier, at least for our purposes.
+ToDo: consider replacing EDAM with IAO identifier as the default reference, i.e. replace in rdc-meta.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://edamontology.org/data_0842"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/IAO_0020000"/>
+        <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000000 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OMIABIS_0000000"/>
+    <owl:Axiom>
+        <rdfs:comment>Todo: check if it is wise to define these as equivalent.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://edamontology.org/topic_3337"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/OMIABIS_0000000"/>
+        <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
+    </owl:Axiom>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000471">
+        <rdfs:isDefinedBy rdf:resource="http://rdf.biosemantics.org/rd-connect/ad77077b_93ba_4c39_b320_bc115e87147c"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rdf.biosemantics.org/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30">
+        <rdfs:isDefinedBy rdf:resource="http://rdf.biosemantics.org/rd-connect/422b9e83_f36c_48dc_aee0_cd3d79160271"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000093">
+        <rdfs:isDefinedBy rdf:resource="http://rdf.biosemantics.org/rd-connect/4dbc4a77_b7ce_4a98_8ff4_4ac3ff134284"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_1110087">
+        <rdfs:isDefinedBy rdf:resource="http://rdf.biosemantics.org/rd-connect/422b9e83_f36c_48dc_aee0_cd3d79160271"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rdf.biosemantics.org/rd-connect/d212d920_6507_45fc_9751_830485f89425">
+        <rdfs:comment>Patient as defined under the RDC namespace</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf.biosemantics.org/rd-connect/4dbc4a77_b7ce_4a98_8ff4_4ac3ff134284"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100051">
+        <rdfs:isDefinedBy rdf:resource="http://rdf.biosemantics.org/rd-connect/29068527_71bf_4739_8cb0_7ebbbe148603"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

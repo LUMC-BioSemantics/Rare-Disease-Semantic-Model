@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY terms2 "http://www.openarchives.org/ore/terms/" >
+    <!ENTITY rd-connect "http://rdf.biosemantics.org/rd-connect/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://rdf.biosemantics.org/owl/2015/7/rdc-example-instances#"
+     xml:base="http://rdf.biosemantics.org/owl/2015/7/rdc-example-instances"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rd-connect="http://rdf.biosemantics.org/rd-connect/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms2="http://www.openarchives.org/ore/terms/">
+    <owl:Ontology rdf:about="http://rdf.biosemantics.org/owl/2015/7/rdc-example-instances">
+        <rdfs:comment>This ontology is only to show example instances. These are expected to be implemented differently.</rdfs:comment>
+        <owl:imports rdf:resource="http://rdf.biosemantics.org/owl/2015/6/rdc-core"/>
+        <owl:imports rdf:resource="http://rdf.biosemantics.org/owl/2015/7/rdc-meta"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/0295332c_31d4_4e25_84a0_124edd8c0a85 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;0295332c_31d4_4e25_84a0_124edd8c0a85">
+        <rdf:type rdf:resource="&obo;OMIABIS_0000000"/>
+        <rdfs:label xml:lang="en">the biobank BB1</rdfs:label>
+        <rdfs:comment>for example the Ring 14 Biobank managed by Telethon, Italy</rdfs:comment>
+        <rdfs:seeAlso>http://www.ring14.org/eng/341/biobank/</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/06a26595_6062_4991_af55_66e630956346 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;06a26595_6062_4991_af55_66e630956346">
+        <rdf:type rdf:resource="&rd-connect;1a64601d_d26f_4bf1_8911_4c372c2053be"/>
+        <rdfs:label xml:lang="en">the ID for experimental process EP1</rdfs:label>
+        <terms:identifier rdf:datatype="&rdfs;Literal">E1</terms:identifier>
+        <obo:IAO_0000219 rdf:resource="&rd-connect;8bf58db5_9f56_44d1_a349_46bcf15f3d94"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/3272e6f1_03f6_483b_9240_82dd1152398c -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;3272e6f1_03f6_483b_9240_82dd1152398c">
+        <rdf:type rdf:resource="&rd-connect;6e18d2bd_cd20_468b_a508_fab520841b93"/>
+        <rdfs:label xml:lang="en">the phenotips patient ID for patient P1</rdfs:label>
+        <terms:identifier rdf:datatype="&rdfs;Literal">P1</terms:identifier>
+        <obo:IAO_0000219 rdf:resource="&rd-connect;f968bcf9_dded_4d6c_9f34_062ccbab33d4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/37bfca44_7ce7_4e3c_ac99_a786ce784cb1 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;37bfca44_7ce7_4e3c_ac99_a786ce784cb1">
+        <rdf:type rdf:resource="&rd-connect;93e201d6_117d_4921_9f6c_185036efa986"/>
+        <rdfs:label xml:lang="en">the EGA sample ID for sample S1</rdfs:label>
+        <terms:identifier rdf:datatype="&rdfs;Literal">7656</terms:identifier>
+        <rdfs:comment>for example DNA sample 7656</rdfs:comment>
+        <rdfs:seeAlso>http://ggb.galliera.it/samplelist.php?ID=466</rdfs:seeAlso>
+        <obo:IAO_0000219 rdf:resource="&rd-connect;6166d1c1_96b2_435d_9000_2332bd18b19a"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/3a823d38_8924_4799_9aa6_fd9ec836c266 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;3a823d38_8924_4799_9aa6_fd9ec836c266">
+        <rdf:type rdf:resource="&rd-connect;666d2bc5_b025_4e59_a8ef_d2b162afbf63"/>
+        <rdfs:label xml:lang="en">the ID of the specific biobank BB1</rdfs:label>
+        <terms:identifier rdf:datatype="&xsd;anyURI">http://www.ring14.org/eng/341/biobank/</terms:identifier>
+        <rdfs:comment>example: the Ring 14 biobank managed by Telethon in Italy</rdfs:comment>
+        <rdfs:seeAlso>http://www.ring14.org/eng/341/biobank/</rdfs:seeAlso>
+        <obo:IAO_0000219 rdf:resource="&rd-connect;0295332c_31d4_4e25_84a0_124edd8c0a85"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/6166d1c1_96b2_435d_9000_2332bd18b19a -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;6166d1c1_96b2_435d_9000_2332bd18b19a">
+        <rdf:type rdf:resource="&obo;OBI_0100051"/>
+        <rdfs:label xml:lang="en">the specimen S1</rdfs:label>
+        <obo:BFO_0000050 rdf:resource="&rd-connect;0295332c_31d4_4e25_84a0_124edd8c0a85"/>
+        <obo:RO_0000087 rdf:resource="&rd-connect;cefe665e_4506_43ca_8c33_65b7baae823a"/>
+        <rd-connect:e297332a_00a9_4ed0_b661_00dbd35aff95 rdf:resource="&rd-connect;f968bcf9_dded_4d6c_9f34_062ccbab33d4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/63301c16_dc92_4af7_b381_a0f46bfad2f4 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;63301c16_dc92_4af7_b381_a0f46bfad2f4">
+        <rdf:type rdf:resource="&rd-connect;61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71"/>
+        <rdfs:label xml:lang="en">the donor ID for patient P1</rdfs:label>
+        <terms:identifier rdf:datatype="&rdfs;Literal">D1</terms:identifier>
+        <obo:IAO_0000219 rdf:resource="&rd-connect;f968bcf9_dded_4d6c_9f34_062ccbab33d4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/7d3d593d_d4db_43b2_abff_200ce8fe5b6a -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;7d3d593d_d4db_43b2_abff_200ce8fe5b6a">
+        <rdf:type rdf:resource="&obo;OBI_0000093"/>
+        <rdfs:label xml:lang="en">the patient role of patient P1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/8285c0c8_f105_4648_8f85_2921882475de -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;8285c0c8_f105_4648_8f85_2921882475de">
+        <rdf:type rdf:resource="&rd-connect;9ff02445_87f9_42a2_8ba9_05f67c8cb475"/>
+        <rdfs:label xml:lang="en">the ID for experiment E1</rdfs:label>
+        <obo:IAO_0000219 rdf:resource="&rd-connect;a682d81d_1cd4_4d36_80e3_25cfb56c1e73"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/8bf58db5_9f56_44d1_a349_46bcf15f3d94 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;8bf58db5_9f56_44d1_a349_46bcf15f3d94">
+        <rdf:type rdf:resource="&obo;OBI_0000471"/>
+        <rdfs:label xml:lang="en">the experimental process EP1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/a682d81d_1cd4_4d36_80e3_25cfb56c1e73 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;a682d81d_1cd4_4d36_80e3_25cfb56c1e73">
+        <rdf:type rdf:resource="&rd-connect;8a88e6f9_970c_45a6_bb60_f31329c71914"/>
+        <rdfs:label xml:lang="en">the Experiment E1</rdfs:label>
+        <rdfs:comment>note that this is an aggregate of resources such as experimental process, data, specimen etc refered to by as an experiment in the RD-Connect platform</rdfs:comment>
+        <terms2:aggregates rdf:resource="&rd-connect;0295332c_31d4_4e25_84a0_124edd8c0a85"/>
+        <terms2:aggregates rdf:resource="&rd-connect;6166d1c1_96b2_435d_9000_2332bd18b19a"/>
+        <terms2:aggregates rdf:resource="&rd-connect;8bf58db5_9f56_44d1_a349_46bcf15f3d94"/>
+        <terms2:aggregates rdf:resource="&rd-connect;f968bcf9_dded_4d6c_9f34_062ccbab33d4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/cefe665e_4506_43ca_8c33_65b7baae823a -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;cefe665e_4506_43ca_8c33_65b7baae823a">
+        <rdf:type rdf:resource="&obo;OBI_0000112"/>
+        <rdfs:label xml:lang="en">the specimen role of specimen S1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/f968bcf9_dded_4d6c_9f34_062ccbab33d4 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;f968bcf9_dded_4d6c_9f34_062ccbab33d4">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">the person P1</rdfs:label>
+        <obo:RO_0000087 rdf:resource="&rd-connect;7d3d593d_d4db_43b2_abff_200ce8fe5b6a"/>
+        <obo:RO_0000087 rdf:resource="&rd-connect;ffcf60f8_8abb_4459_b959_562375e78084"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rdf.biosemantics.org/rd-connect/ffcf60f8_8abb_4459_b959_562375e78084 -->
+
+    <owl:NamedIndividual rdf:about="&rd-connect;ffcf60f8_8abb_4459_b959_562375e78084">
+        <rdf:type rdf:resource="&obo;OBI_1110087"/>
+        <rdfs:label xml:lang="en">the donor role of patient P1</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

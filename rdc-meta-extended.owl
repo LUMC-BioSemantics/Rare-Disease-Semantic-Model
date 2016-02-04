@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY pav "http://purl.org/pav/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY metadata "http://data.bioontology.org/metadata/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://rdf.biosemantics.org/owl/2015/7/rdc-meta-extended#"
+     xml:base="http://rdf.biosemantics.org/owl/2015/7/rdc-meta-extended"
+     xmlns:metadata="http://data.bioontology.org/metadata/"
+     xmlns:pav="http://purl.org/pav/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="http://rdf.biosemantics.org/owl/2015/7/rdc-meta-extended">
+        <pav:createdBy rdf:datatype="&xsd;anyURI">http://orcid.org/0000-0002-8691-772X</pav:createdBy>
+        <rdfs:comment>Ontology that includes the axioms associated with the classes and properties used in rdc-meta.</rdfs:comment>
+        <owl:imports rdf:resource="http://rdf.biosemantics.org/owl/2015/7/rdc-meta"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.bioontology.org/metadata/prefixIRI -->
+
+    <owl:AnnotationProperty rdf:about="&metadata;prefixIRI"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000117"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000118 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000118"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000119"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="&obo;BFO_0000050"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
+
+    <owl:ObjectProperty rdf:about="&obo;IAO_0000136"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0020012 -->
+
+    <owl:ObjectProperty rdf:about="&obo;IAO_0020012"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="&obo;OBI_0000299"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
+
+    <owl:ObjectProperty rdf:about="&obo;OBI_0000312"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000846 -->
+
+    <owl:ObjectProperty rdf:about="&obo;OBI_0000846"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000009 -->
+
+    <owl:ObjectProperty rdf:about="&obo;OMIABIS_0000009"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000042 -->
+
+    <owl:ObjectProperty rdf:about="&obo;OMIABIS_0000042"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000053 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RO_0000053"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RO_0000056"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0001015 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RO_0001015"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://edamontology.org/data_0842 -->
+
+    <rdf:Description rdf:about="http://edamontology.org/data_0842">
+        <owl:equivalentClass rdf:resource="&obo;IAO_0020000"/>
+    </rdf:Description>
+    <owl:Axiom>
+        <rdfs:comment>Justification of mapping: the EDAM superclass &apos;Data&apos; does not seem at odds with being an information artefact. I surmize that IAO:identifier can be equivalent to EDAM identifier, at least for our purposes.
+ToDo: consider replacing EDAM with IAO identifier as the default reference, i.e. replace in rdc-meta.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://edamontology.org/data_0842"/>
+        <owl:annotatedTarget rdf:resource="&obo;IAO_0020000"/>
+        <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000001"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000027 -->
+
+    <owl:Class rdf:about="&obo;BFO_0000027"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GAZ_00000448 -->
+
+    <owl:Class rdf:about="&obo;GAZ_00000448"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GEO_000000006 -->
+
+    <owl:Class rdf:about="&obo;GEO_000000006"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GEO_000000396 -->
+
+    <owl:Class rdf:about="&obo;GEO_000000396"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
+
+    <owl:Class rdf:about="&obo;IAO_0000030"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000300 -->
+
+    <owl:Class rdf:about="&obo;IAO_0000300"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000422 -->
+
+    <owl:Class rdf:about="&obo;IAO_0000422"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000577 -->
+
+    <owl:Class rdf:about="&obo;IAO_0000577"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0020000 -->
+
+    <owl:Class rdf:about="&obo;IAO_0020000">
+        <rdfs:label>identifier</rdfs:label>
+        <rdfs:label xml:lang="en">identifier</rdfs:label>
+        <rdfs:label xml:lang="en">proper name</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:someValuesFrom rdf:resource="&obo;BFO_0000001"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;OBI_0000312"/>
+                        <owl:allValuesFrom rdf:resource="&obo;IAO_0020010"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
+        <metadata:prefixIRI rdf:datatype="&xsd;string">IAO:0020000</metadata:prefixIRI>
+        <obo:IAO_0000115 xml:lang="en">A proper name is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity. </obo:IAO_0000115>
+        <rdfs:comment>Identifier from IAO as used by OBIB</rdfs:comment>
+        <obo:IAO_0000117 xml:lang="en">Mathias Brochhausen</obo:IAO_0000117>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Justification of mapping: the EDAM superclass &apos;Data&apos; does not seem at odds with being an information artefact. I surmize that IAO:identifier can be equivalent to EDAM identifier, at least for our purposes.
+ToDo: consider replacing EDAM with IAO identifier as the default reference, i.e. replace in rdc-meta.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://edamontology.org/data_0842"/>
+        <owl:annotatedTarget rdf:resource="&obo;IAO_0020000"/>
+        <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0020010 -->
+
+    <owl:Class rdf:about="&obo;IAO_0020010">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="&obo;IAO_0020000"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0020015 -->
+
+    <owl:Class rdf:about="&obo;IAO_0020015">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;IAO_0020000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:allValuesFrom rdf:resource="&obo;NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000003 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000003">
+        <rdfs:label xml:lang="en">biobank proper name</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000000"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+        <metadata:prefixIRI rdf:datatype="&xsd;string">OMIABIS:0000003</metadata:prefixIRI>
+        <obo:IAO_0000115 xml:lang="en">An identifier in natural language referring  to a biobank.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">Name of biobank</obo:IAO_0000118>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000004 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000004">
+        <rdfs:label xml:lang="en">ISO 3166-1 alpha-2 code</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;GEO_000000006"/>
+                            <rdf:Description rdf:about="&obo;GEO_000000396"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <metadata:prefixIRI rdf:datatype="&xsd;string">OMIABIS:0000004</metadata:prefixIRI>
+        <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">An identifier that consists of two letters, is part of the ISO 3166-1, and designates countries, dependent territories, and special areas of geographical interest.</obo:IAO_0000115>
+        <rdfs:comment xml:lang="en">Two-letter country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to designate countries, dependent territories, and special areas of geographical interest.</rdfs:comment>
+        <obo:IAO_0000119>http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</obo:IAO_0000119>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000005 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000005">
+        <rdfs:subClassOf rdf:resource="&obo;OMIABIS_0000003"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000004"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000000"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000006 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000006">
+        <rdfs:label xml:lang="en">sample collection or study identifier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;IAO_0020000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;OBI_0000471"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&obo;BFO_0000027"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                                                <owl:allValuesFrom rdf:resource="&obo;OBI_0100051"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <metadata:prefixIRI rdf:datatype="&xsd;string">OMIABIS:0000006</metadata:prefixIRI>
+        <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">A sample collection or study proper name that is centrally registered and unique within one framework.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">Sample Collection/Study ID</obo:IAO_0000118>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000007 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000007">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;OMIABIS_0000004"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;IAO_0000422"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;OMIABIS_0000042"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;NCBITaxon_9606"/>
+                                                    <owl:Class>
+                                                        <owl:unionOf rdf:parseType="Collection">
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;BFO_0000027"/>
+                                                                    </owl:Restriction>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;OMIABIS_0000009"/>
+                                                                        <owl:someValuesFrom>
+                                                                            <owl:Class>
+                                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                                    <rdf:Description rdf:about="&obo;BFO_0000027"/>
+                                                                                    <owl:Restriction>
+                                                                                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                                                                                        <owl:allValuesFrom rdf:resource="&obo;OBI_0100051"/>
+                                                                                    </owl:Restriction>
+                                                                                </owl:intersectionOf>
+                                                                            </owl:Class>
+                                                                        </owl:someValuesFrom>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RO_0000053"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000094"/>
+                                                                    </owl:Restriction>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;OBI_0000471"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:unionOf>
+                                                    </owl:Class>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;OMIABIS_0000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000010 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000010"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000024 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000024"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000028 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000028">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;OMIABIS_0000004"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;IAO_0000422"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;OMIABIS_0000042"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;NCBITaxon_9606"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;OBI_0000846"/>
+                                                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000010"/>
+                                                    </owl:Restriction>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RO_0000053"/>
+                                                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000093"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;OMIABIS_0000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000031 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000031">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;IAO_0000300"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="&obo;IAO_0000422"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;IAO_0020000"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;OMIABIS_0000024"/>
+                                                    <rdf:Description rdf:about="&obo;OMIABIS_0000041"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000033 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000033"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000034 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000034">
+        <rdfs:label xml:lang="en">name of hosted study collection</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;IAO_0020000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000033"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+        <metadata:prefixIRI rdf:datatype="&xsd;string">OMIABIS:0000034</metadata:prefixIRI>
+        <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">The proper name that designates a hosted study collection.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000037 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000037">
+        <rdfs:label xml:lang="en">study proper name</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;IAO_0020000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OBI_0000471"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+        <metadata:prefixIRI rdf:datatype="&xsd;string">OMIABIS:0000037</metadata:prefixIRI>
+        <obo:IAO_0000115 xml:lang="en">A proper name that designates a study.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">Study name</obo:IAO_0000118>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000041 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000041"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000045 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000045">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;OMIABIS_0000004"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GAZ_00000448"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RO_0001015"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000000"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;OMIABIS_0000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000046 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000046">
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000047 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000047">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;OMIABIS_0000004"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&obo;OMIABIS_0000046"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                                                <owl:allValuesFrom rdf:resource="&obo;OMIABIS_0000010"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0020012"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OMIABIS_0000000"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000093 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000093"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000094 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0000094"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0001046 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0001046">
+        <rdfs:label xml:lang="en">specimen ID</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="&obo;IAO_0000577"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OBI_0100051"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <metadata:prefixIRI rdf:datatype="&xsd;string">OMIABIS:0001046</metadata:prefixIRI>
+        <obo:IAO_0000117 xml:lang="en">Alice Nzinga</obo:IAO_0000117>
+        <rdfs:comment>specimen ID as defined by OBIB</rdfs:comment>
+        <obo:IAO_0000115 xml:lang="en">A proper name that identifies a specimen and is usually in form of a label included in the specimen cassette.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">http://biospecimens.cancer.gov/resources/sops/GTEx_SOPs/II/A/GTEx%20Tissue%20Procurement%20SOP%20%28PR-0004%20v1.2.1%29.pdf</obo:IAO_0000119>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0001047 -->
+
+    <owl:Class rdf:about="&obo;OMIABIS_0001047">
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
