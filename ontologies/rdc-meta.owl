@@ -8,458 +8,313 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix metadata: <http://data.bioontology.org/metadata/> .
-@base <http://rdf.biosemantics.org/ontologies/rd-connect/rdc-meta> .
 
-<http://rdf.biosemantics.org/ontologies/rd-connect/rdc-meta> rdf:type owl:Ontology ;
-                                                             
-                                                             rdfs:comment "Rare disease connect metamodel. This model links rare disease core model classes and properties to superclasses and superproperties in selected preferred ontologies. Additional relations with relevant ontologies can be found in the mapping model."^^xsd:string ;
-                                                             
-                                                             pav:createdBy "http://orcid.org/0000-0002-8691-772X"^^xsd:anyURI ;
-                                                             
-                                                             owl:imports <http://rdf.biosemantics.org/ontologies/rd-connect/rdc-core> .
-
-
-#################################################################
-#
-#    Annotation properties
-#
-#################################################################
-
-
-###  http://data.bioontology.org/metadata/prefixIRI
-
-metadata:prefixIRI rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000111
-
-obo:IAO_0000111 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000112
-
-obo:IAO_0000112 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000114
-
-obo:IAO_0000114 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000115
-
-obo:IAO_0000115 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000116
-
-obo:IAO_0000116 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000117
-
-obo:IAO_0000117 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000118
-
-obo:IAO_0000118 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000119
-
-obo:IAO_0000119 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000412
-
-obo:IAO_0000412 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000600
-
-obo:IAO_0000600 rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.org/dc/elements/1.1/source
-
-dc:source rdf:type owl:AnnotationProperty .
-
-
-
-
-
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
-
-
-###  http://edamontology.org/has_identifier
-
-<http://edamontology.org/has_identifier> rdf:type owl:ObjectProperty ;
-                                         
-                                         rdfs:label "has_identifier"@en ;
-                                         
-                                         rdfs:comment "has identifier property from EDAM. Note the domain and range: Data and Identifier respectively." ;
-                                         
-                                         rdfs:domain <http://edamontology.org/data_0006> ;
-                                         
-                                         rdfs:range <http://edamontology.org/data_0842> ;
-                                         
-                                         owl:inverseOf <http://edamontology.org/is_identifier_of> .
-
-
-
-###  http://edamontology.org/is_identifier_of
-
-<http://edamontology.org/is_identifier_of> rdf:type owl:ObjectProperty ;
-                                           
-                                           rdfs:label "is identifier of" ;
-                                           
-                                           rdfs:comment "Note the Domain and Range: Identifier and Data respectively." ,
-                                                        """EDAM:
-'A is_identifier_of B' defines for the subject A, that it is an identifier of the object B.,Subject A can either be a concept that is an 'Identifier', or an entity outside of an ontology (or an ontology concept in a role of an entity being semantically annotated) that is an 'Identifier' or is in the role of an 'Identifier'. Object B can be any concept or entity outside of an ontology. In EDAM, only 'is_identifier_of' is explicitly defined between EDAM concepts (only 'Identifier' 'is_identifier_of' 'Data'). The inverse, 'has_identifier', is not explicitly defined.""" ;
-                                           
-                                           rdfs:range <http://edamontology.org/data_0006> ;
-                                           
-                                           rdfs:domain <http://edamontology.org/data_0842> .
-
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000050
-
-obo:BFO_0000050 rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "is part of" ;
-                
-                rdfs:comment "is part of from OBO Foundry Relation Ontology as used by OBIB" .
-
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000051
-
-obo:BFO_0000051 rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "has part" ;
-                
-                rdfs:comment "has part from OBO Foundry Relation Ontology as used by OBIB" ;
-                
-                owl:inverseOf obo:BFO_0000050 .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000219
-
-obo:IAO_0000219 rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "denotes" ;
-                
-                rdfs:comment """Relation from the Information Artefact Ontology to link instances of information artefacts to instances of real entities. Thus far the best relation I could find.
-Definition from IAO: denotes is a primitive, instance-level, relation obtaining between an information content entity and some portion of reality. Denotation is what happens when someone creates an information content entity E in order to specifically refer to something. The only relation between E and the thing is that E can be used to 'pick out' the thing. This relation connects those two together. Freedictionary.com sense 3: To signify directly; refer to specifically.""" .
-
-
-
-###  http://purl.obolibrary.org/obo/OMIABIS_0000008
-
-obo:OMIABIS_0000008 rdf:type owl:AsymmetricProperty ,
-                             owl:ObjectProperty ;
-                    
-                    rdfs:label "owns"@en ;
-                    
-                    obo:IAO_0000117 "Mathias Brochhausen" ;
-                    
-                    dc:source "Reinach, A. Sämtliche Werke. Texkritische Ausgabe, München: Philosophia Verlag, 1989, p.189-204." ;
-                    
-                    obo:IAO_0000600 "This is a primitive relation. This relation is the foundation to the owners right to have the owned entity at his/her full disposal. "@en ;
-                    
-                    owl:inverseOf obo:OMIABIS_0000048 .
-
-
-
-###  http://purl.obolibrary.org/obo/OMIABIS_0000048
-
-obo:OMIABIS_0000048 rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "is owned by"@en ;
-                    
-                    obo:IAO_0000119 "Reinach, A. Sämtliche Werke. Texkritische Ausgabe, München: Philosophia Verlag, 1989, p.189-204." ;
-                    
-                    obo:IAO_0000115 "a is owned by b if b has complete power over a. All rights and obligations of ownership are grounded in this (primitive) relation. The claims and obligations of ownership can be partially transferred to a third party by the owner, b."@en .
-
-
-
-###  http://purl.obolibrary.org/obo/RO_0000081
-
-obo:RO_0000081 rdf:type owl:ObjectProperty ;
-               
-               rdfs:label "role of" .
-
-
-
-###  http://purl.obolibrary.org/obo/RO_0000086
-
-obo:RO_0000086 rdf:type owl:ObjectProperty ;
-               
-               rdfs:label "has quality"@en ;
-               
-               obo:IAO_0000412 obo:ro.owl .
-
-
-
-###  http://purl.obolibrary.org/obo/RO_0000087
-
-obo:RO_0000087 rdf:type owl:ObjectProperty ;
-               
-               rdfs:label "has role"@en ;
-               
-               rdfs:comment "From the OBO Relation ontology: \"a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence\""@en .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/e297332a_00a9_4ed0_b661_00dbd35aff95
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/e297332a_00a9_4ed0_b661_00dbd35aff95> rdf:type owl:ObjectProperty ;
-                                                                                         
-                                                                                         rdfs:label "obtained from human donor"@en ;
-                                                                                         
-                                                                                         rdfs:comment "ToDo: find a superproperty in a commonly used ontology" ,
-                                                                                                      "Relation to specify that a specimen was obtained from a donor. This specific property was created to enable refactoring the superproperty of this property." ;
-                                                                                         
-                                                                                         rdfs:range obo:NCBITaxon_9606 ;
-                                                                                         
-                                                                                         rdfs:domain obo:OBI_0100051 .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/6c9783cd_d632_4e8b_bc0c_a83ea200f1b1
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/6c9783cd_d632_4e8b_bc0c_a83ea200f1b1> rdf:type owl:ObjectProperty ;
-                                                                                         
-                                                                                         rdfs:label "person provided specimen"@en ;
-                                                                                         
-                                                                                         rdfs:comment "Relation to specify that a donor provided a specimen. This specific property was created to enable refactoring the superproperty of this property." ,
-                                                                                                      "ToDo: find a superproperty in a commonly used ontology" ;
-                                                                                         
-                                                                                         rdfs:domain obo:NCBITaxon_9606 ;
-                                                                                         
-                                                                                         rdfs:range obo:OBI_0100051 ;
-                                                                                         
-                                                                                         owl:inverseOf <http://rdf.biosemantics.org/ontologies/rd-connect/e297332a_00a9_4ed0_b661_00dbd35aff95> .
-
-
-
-###  http://www.openarchives.org/ore/terms/aggregates
-
-<http://www.openarchives.org/ore/terms/aggregates> rdf:type owl:ObjectProperty ;
-                                                   
-                                                   rdfs:comment "aggregates" ,
-                                                                "aggregates as defined by ORE and the Research Object model" ;
-                                                   
-                                                   rdfs:range <http://www.openarchives.org/ore/terms/AggregatedResource> ;
-                                                   
-                                                   rdfs:domain <http://www.openarchives.org/ore/terms/Aggregation> .
-
-
-
-###  http://www.openarchives.org/ore/terms/isAggregatedBy
-
-<http://www.openarchives.org/ore/terms/isAggregatedBy> rdf:type owl:ObjectProperty ;
-                                                       
-                                                       rdfs:comment "is aggregated by as defined by ORE and used by the Research Object model" ;
-                                                       
-                                                       rdfs:domain <http://www.openarchives.org/ore/terms/AggregatedResource> ;
-                                                       
-                                                       rdfs:range <http://www.openarchives.org/ore/terms/Aggregation> ;
-                                                       
-                                                       owl:inverseOf <http://www.openarchives.org/ore/terms/aggregates> .
-
-
-
-
-
-#################################################################
-#
-#    Data properties
-#
-#################################################################
-
-
-###  http://purl.org/dc/terms/identifier
-
-<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ,
-                                               owl:FunctionalProperty ;
-                                      
-                                      rdfs:domain <http://edamontology.org/data_0842> .
-
-
-
-
-
-#################################################################
-#
-#    Classes
-#
-#################################################################
-
-
-###  http://edamontology.org/data_0006
-
-<http://edamontology.org/data_0006> rdf:type owl:Class ;
-                                    
-                                    rdfs:label "Data" ;
-                                    
-                                    rdfs:comment "General class for data records. From EDAM: Information, represented in an information artefact (data record) that is 'understandable' by dedicated computational tools that can use the data as input or produce it as output." .
-
-
-
-###  http://edamontology.org/data_0842
-
-<http://edamontology.org/data_0842> rdf:type owl:Class ;
-                                    
-                                    rdfs:label "Identifier"^^xsd:string ;
-                                    
-                                    owl:equivalentClass obo:IAO_0020000 ,
-                                                        [ rdf:type owl:Class ;
-                                                          owl:intersectionOf ( <http://edamontology.org/data_0006>
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <http://purl.org/dc/terms/identifier> ;
-                                                                                 owl:someValuesFrom rdfs:Literal
-                                                                               ]
-                                                                             )
-                                                        ] ;
-                                    
-                                    rdfs:subClassOf <http://edamontology.org/data_0006> ;
-                                    
-                                    rdfs:comment "General class for identifiers from the EDAM ontology."^^xsd:string ;
-                                    
-                                    rdfs:seeAlso "http://edamontology.org/"^^xsd:string .
-[ rdf:type owl:Axiom ;
-  rdfs:comment "ToDo: decide if this mapping should be in rdc-mapping and if EDAM or OBIB is the preferred ontology for rdc-meta." ;
-  owl:annotatedSource <http://edamontology.org/data_0842> ;
-  owl:annotatedTarget obo:IAO_0020000 ;
-  owl:annotatedProperty owl:equivalentClass
-] .
-
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000023
-
-obo:BFO_0000023 rdf:type owl:Class ;
-                
-                rdfs:label "Role" ;
-                
-                rdfs:comment "Role as defined by BFO. A role is dependent on another entity, e.g. the role of patient depends on the patient it is the role of." .
-
-
-
-###  http://purl.obolibrary.org/obo/ERO_0001843
-
-obo:ERO_0001843 rdf:type owl:Class ;
-                
-                rdfs:label "Registry organization"^^xsd:string ;
-                
-                rdfs:subClassOf obo:OBI_0000245 ;
-                
-                obo:IAO_0000115 "An organization dedicated to the collection, storage and dissemination of a set of scientific or clinical data."^^xsd:string ;
-                
-                obo:IAO_0000117 "PERSON: Nicole Vasilevsky"^^xsd:string ;
-                
-                obo:IAO_0000119 "PERSON: Scott Hoffmann"^^xsd:string ;
-                
-                obo:IAO_0000114 obo:IAO_0000123 .
-
-
-
-###  http://purl.obolibrary.org/obo/IAO_0020000
-
-obo:IAO_0020000 rdf:type owl:Class ;
-                
-                rdfs:label "identifier" ;
-                
-                rdfs:comment "Identifier from IAO as used by OBIB" .
-[ rdf:type owl:Axiom ;
-  rdfs:comment "ToDo: decide if this mapping should be in rdc-mapping and if EDAM or OBIB is the preferred ontology for rdc-meta." ;
-  owl:annotatedSource <http://edamontology.org/data_0842> ;
-  owl:annotatedTarget obo:IAO_0020000 ;
-  owl:annotatedProperty owl:equivalentClass
-] .
-
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_9606
-
-obo:NCBITaxon_9606 rdf:type owl:Class ;
-                   
-                   rdfs:label "Homo sapiens" .
-
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000011
-
-obo:OBI_0000011 rdf:type owl:Class ;
-                
-                rdfs:label "Planned process" ;
-                
-                rdfs:comment "Best match for 'experiment' from OBO foundy ontologies, and as used by OBIB: A processual entity that realizes a plan which is the concretization of a plan specification." .
-
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000093
-
-obo:OBI_0000093 rdf:type owl:Class ;
-                
-                rdfs:label "Patient role"^^xsd:string ;
-                
-                rdfs:subClassOf obo:BFO_0000023 ;
-                
-                rdfs:comment "An instance of this class represents the role of patient. This class is from the Ontology of Biomedical Investigations (OBI) that is also used in the biobank ontology (OBIB)."^^xsd:string .
-
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000112
-
-obo:OBI_0000112 rdf:type owl:Class ;
-                
-                rdfs:label "Specimen role" ;
-                
-                rdfs:subClassOf obo:BFO_0000023 ;
-                
-                rdfs:comment "From OBI: a role borne by a material entity that is gained during a specimen collection process and that can be realized by use of the specimen in an investigation" ,
-                             "ToDo: work out role of Specimen role in ontology." .
-
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000245
-
-obo:OBI_0000245 rdf:type owl:Class ;
-                
-                rdfs:label "organization"@en ;
-                
-                obo:IAO_0000119 "GROUP: OBI"^^xsd:string ;
-                
-                metadata:prefixIRI "OBI:0000245"^^xsd:string ;
-                
-                obo:IAO_0000117 "PERSON: Alan Ruttenberg"^^xsd:string ,
-                                "PERSON: Bjoern Peters"^^xsd:string ,
-                                "PERSON: Philippe Rocca-Serra"^^xsd:string ,
-                                "PERSON: Susanna Sansone"^^xsd:string ;
-                
-                obo:IAO_0000115 "An entity that can bear roles, has members, and has a set of organization rules. Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members."@en ;
-                
-                obo:IAO_0000116 """BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
+<http://rdf.biosemantics.org/ontologies/rd-connect/rdc-meta> a owl:Ontology ;
+	owl:imports <http://rdf.biosemantics.org/ontologies/rd-connect/rdc-core> ;
+	pav:createdBy "http://orcid.org/0000-0002-8691-772X"^^xsd:anyURI ;
+	rdfs:comment "Rare disease connect metamodel. This model links rare disease core model classes and properties to superclasses and superproperties in selected preferred ontologies. Additional relations with relevant ontologies can be found in the mapping model."^^xsd:string .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://data.bioontology.org/metadata/prefixIRI
+
+metadata:prefixIRI a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000111
+
+obo:IAO_0000111 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000112
+
+obo:IAO_0000112 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000114
+
+obo:IAO_0000114 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000115
+
+obo:IAO_0000115 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000116
+
+obo:IAO_0000116 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000117
+
+obo:IAO_0000117 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000118
+
+obo:IAO_0000118 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000119
+
+obo:IAO_0000119 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000412
+
+obo:IAO_0000412 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000600
+
+obo:IAO_0000600 a owl:AnnotationProperty .
+# 
+# http://purl.org/dc/elements/1.1/source
+
+dc:source a owl:AnnotationProperty .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/7e3fe231_01b9_46b9_8770_f5a5c598d04f
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/7e3fe231_01b9_46b9_8770_f5a5c598d04f> a owl:AnnotationProperty ;
+	rdfs:label "breakpoint localization"@en ;
+	rdfs:domain <http://rdf.biosemantics.org/ontologies/rd-connect/6422a6c7_c9e4_4fe3_bc28_5e30c38e18bb> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://edamontology.org/has_identifier
+
+<http://edamontology.org/has_identifier> a owl:ObjectProperty ;
+	owl:inverseOf <http://edamontology.org/is_identifier_of> ;
+	rdfs:domain <http://edamontology.org/data_0006> ;
+	rdfs:range <http://edamontology.org/data_0842> ;
+	rdfs:comment "has identifier property from EDAM. Note the domain and range: Data and Identifier respectively." ;
+	rdfs:label "has_identifier"@en .
+# 
+# http://edamontology.org/is_identifier_of
+
+<http://edamontology.org/is_identifier_of> a owl:ObjectProperty ;
+	rdfs:domain <http://edamontology.org/data_0842> ;
+	rdfs:range <http://edamontology.org/data_0006> ;
+	rdfs:comment """EDAM:
+'A is_identifier_of B' defines for the subject A, that it is an identifier of the object B.,Subject A can either be a concept that is an 'Identifier', or an entity outside of an ontology (or an ontology concept in a role of an entity being semantically annotated) that is an 'Identifier' or is in the role of an 'Identifier'. Object B can be any concept or entity outside of an ontology. In EDAM, only 'is_identifier_of' is explicitly defined between EDAM concepts (only 'Identifier' 'is_identifier_of' 'Data'). The inverse, 'has_identifier', is not explicitly defined.""" , "Note the Domain and Range: Identifier and Data respectively." ;
+	rdfs:label "is identifier of" .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000050
+
+obo:BFO_0000050 a owl:ObjectProperty ;
+	owl:inverseOf obo:BFO_0000051 ;
+	rdfs:comment "is part of from OBO Foundry Relation Ontology as used by OBIB" ;
+	rdfs:label "is part of" .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000051
+
+obo:BFO_0000051 a owl:ObjectProperty ;
+	rdfs:comment "has part from OBO Foundry Relation Ontology as used by OBIB" ;
+	rdfs:label "has part" .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000219
+
+obo:IAO_0000219 a owl:ObjectProperty ;
+	rdfs:comment """Relation from the Information Artefact Ontology to link instances of information artefacts to instances of real entities. Thus far the best relation I could find.
+Definition from IAO: denotes is a primitive, instance-level, relation obtaining between an information content entity and some portion of reality. Denotation is what happens when someone creates an information content entity E in order to specifically refer to something. The only relation between E and the thing is that E can be used to 'pick out' the thing. This relation connects those two together. Freedictionary.com sense 3: To signify directly; refer to specifically.""" ;
+	rdfs:label "denotes" .
+# 
+# http://purl.obolibrary.org/obo/OMIABIS_0000008
+
+obo:OMIABIS_0000008 a owl:ObjectProperty ;
+	owl:inverseOf obo:OMIABIS_0000048 ;
+	a owl:AsymmetricProperty ;
+	obo:IAO_0000117 "Mathias Brochhausen" ;
+	obo:IAO_0000600 "This is a primitive relation. This relation is the foundation to the owners right to have the owned entity at his/her full disposal. "@en ;
+	dc:source "Reinach, A. Sämtliche Werke. Texkritische Ausgabe, München: Philosophia Verlag, 1989, p.189-204." ;
+	rdfs:label "owns"@en .
+# 
+# http://purl.obolibrary.org/obo/OMIABIS_0000048
+
+obo:OMIABIS_0000048 a owl:ObjectProperty ;
+	obo:IAO_0000115 "a is owned by b if b has complete power over a. All rights and obligations of ownership are grounded in this (primitive) relation. The claims and obligations of ownership can be partially transferred to a third party by the owner, b."@en ;
+	obo:IAO_0000119 "Reinach, A. Sämtliche Werke. Texkritische Ausgabe, München: Philosophia Verlag, 1989, p.189-204." ;
+	rdfs:label "is owned by"@en .
+# 
+# http://purl.obolibrary.org/obo/RO_0000081
+
+obo:RO_0000081 a owl:ObjectProperty ;
+	rdfs:label "role of" .
+# 
+# http://purl.obolibrary.org/obo/RO_0000086
+
+obo:RO_0000086 a owl:ObjectProperty ;
+	obo:IAO_0000412 obo:ro.owl ;
+	rdfs:label "has quality"@en .
+# 
+# http://purl.obolibrary.org/obo/RO_0000087
+
+obo:RO_0000087 a owl:ObjectProperty ;
+	rdfs:comment "From the OBO Relation ontology: \"a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence\""@en ;
+	rdfs:label "has role"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/e297332a_00a9_4ed0_b661_00dbd35aff95
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/e297332a_00a9_4ed0_b661_00dbd35aff95> a owl:ObjectProperty ;
+	owl:inverseOf <http://rdf.biosemantics.org/ontologies/rd-connect/6c9783cd_d632_4e8b_bc0c_a83ea200f1b1> ;
+	rdfs:domain obo:OBI_0100051 ;
+	rdfs:range obo:NCBITaxon_9606 ;
+	rdfs:comment "Relation to specify that a specimen was obtained from a donor. This specific property was created to enable refactoring the superproperty of this property." , "ToDo: find a superproperty in a commonly used ontology" ;
+	rdfs:label "obtained from human donor"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/59e1324d_567b_42e1_bc88_203004e660da
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/59e1324d_567b_42e1_bc88_203004e660da> a owl:ObjectProperty ;
+	rdfs:domain obo:NCBITaxon_9606 ;
+	rdfs:range obo:OGMS_0000023 ;
+	rdfs:comment "A property linking a person to an phenotypic observed characteristic"@en ;
+	rdfs:label "displays"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/6c9783cd_d632_4e8b_bc0c_a83ea200f1b1
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/6c9783cd_d632_4e8b_bc0c_a83ea200f1b1> a owl:ObjectProperty ;
+	rdfs:domain obo:NCBITaxon_9606 ;
+	rdfs:range obo:OBI_0100051 ;
+	rdfs:comment "Relation to specify that a donor provided a specimen. This specific property was created to enable refactoring the superproperty of this property." , "ToDo: find a superproperty in a commonly used ontology" ;
+	rdfs:label "person provided specimen"@en .
+# 
+# http://www.openarchives.org/ore/terms/aggregates
+
+<http://www.openarchives.org/ore/terms/aggregates> a owl:ObjectProperty ;
+	owl:inverseOf <http://www.openarchives.org/ore/terms/isAggregatedBy> ;
+	rdfs:domain <http://www.openarchives.org/ore/terms/Aggregation> ;
+	rdfs:range <http://www.openarchives.org/ore/terms/AggregatedResource> ;
+	rdfs:comment "aggregates" , "aggregates as defined by ORE and the Research Object model" .
+# 
+# http://www.openarchives.org/ore/terms/isAggregatedBy
+
+<http://www.openarchives.org/ore/terms/isAggregatedBy> a owl:ObjectProperty ;
+	rdfs:domain <http://www.openarchives.org/ore/terms/AggregatedResource> ;
+	rdfs:range <http://www.openarchives.org/ore/terms/Aggregation> ;
+	rdfs:comment "is aggregated by as defined by ORE and used by the Research Object model" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/identifier
+
+<http://purl.org/dc/terms/identifier> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://edamontology.org/data_0842> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://edamontology.org/data_0006
+
+<http://edamontology.org/data_0006> a owl:Class ;
+	rdfs:comment "General class for data records. From EDAM: Information, represented in an information artefact (data record) that is 'understandable' by dedicated computational tools that can use the data as input or produce it as output." ;
+	rdfs:label "Data" .
+# 
+# http://edamontology.org/data_0842
+
+<http://edamontology.org/data_0842> a owl:Class ;
+	owl:equivalentClass obo:IAO_0020000 , _:genid2 .
+
+_:genid2 owl:intersectionOf _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0006> ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty <http://purl.org/dc/terms/identifier> ;
+	owl:someValuesFrom rdfs:Literal .
+
+_:genid3 rdf:rest rdf:nil .
+
+_:genid2 a owl:Class .
+
+<http://edamontology.org/data_0842> rdfs:subClassOf <http://edamontology.org/data_0006> ;
+	rdfs:comment "General class for identifiers from the EDAM ontology."^^xsd:string ;
+	rdfs:label "Identifier"^^xsd:string ;
+	rdfs:seeAlso "http://edamontology.org/"^^xsd:string .
+
+_:genid1 a owl:Axiom ;
+	owl:annotatedSource <http://edamontology.org/data_0842> ;
+	owl:annotatedProperty owl:equivalentClass ;
+	owl:annotatedTarget obo:IAO_0020000 ;
+	rdfs:comment "ToDo: decide if this mapping should be in rdc-mapping and if EDAM or OBIB is the preferred ontology for rdc-meta." .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000023
+
+obo:BFO_0000023 a owl:Class ;
+	rdfs:comment "Role as defined by BFO. A role is dependent on another entity, e.g. the role of patient depends on the patient it is the role of." ;
+	rdfs:label "Role" .
+# 
+# http://purl.obolibrary.org/obo/ERO_0001843
+
+obo:ERO_0001843 a owl:Class ;
+	rdfs:subClassOf obo:OBI_0000245 ;
+	obo:IAO_0000114 obo:IAO_0000123 ;
+	obo:IAO_0000115 "An organization dedicated to the collection, storage and dissemination of a set of scientific or clinical data."^^xsd:string ;
+	obo:IAO_0000117 "PERSON: Nicole Vasilevsky"^^xsd:string ;
+	obo:IAO_0000119 "PERSON: Scott Hoffmann"^^xsd:string ;
+	rdfs:label "Registry organization"^^xsd:string .
+# 
+# http://purl.obolibrary.org/obo/IAO_0020000
+
+obo:IAO_0020000 a owl:Class ;
+	rdfs:comment "Identifier from IAO as used by OBIB" ;
+	rdfs:label "identifier" .
+# 
+# http://purl.obolibrary.org/obo/NCBITaxon_9606
+
+obo:NCBITaxon_9606 a owl:Class ;
+	rdfs:label "Homo sapiens" .
+# 
+# http://purl.obolibrary.org/obo/OBI_0000011
+
+obo:OBI_0000011 a owl:Class ;
+	rdfs:comment "Best match for 'experiment' from OBO foundy ontologies, and as used by OBIB: A processual entity that realizes a plan which is the concretization of a plan specification." ;
+	rdfs:label "Planned process" .
+# 
+# http://purl.obolibrary.org/obo/OBI_0000093
+
+obo:OBI_0000093 a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000023 ;
+	rdfs:comment "An instance of this class represents the role of patient. This class is from the Ontology of Biomedical Investigations (OBI) that is also used in the biobank ontology (OBIB)."^^xsd:string ;
+	rdfs:label "Patient role"^^xsd:string .
+# 
+# http://purl.obolibrary.org/obo/OBI_0000112
+
+obo:OBI_0000112 a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000023 ;
+	rdfs:comment "From OBI: a role borne by a material entity that is gained during a specimen collection process and that can be realized by use of the specimen in an investigation" , "ToDo: work out role of Specimen role in ontology." ;
+	rdfs:label "Specimen role" .
+# 
+# http://purl.obolibrary.org/obo/OBI_0000245
+
+obo:OBI_0000245 a owl:Class ;
+	metadata:prefixIRI "OBI:0000245"^^xsd:string ;
+	obo:IAO_0000111 "organization"@en ;
+	obo:IAO_0000112 "PMID: 16353909.AAPS J. 2005 Sep 22;7(2):E274-80. Review. The joint food and agriculture organization of the United Nations/World Health Organization Expert Committee on Food Additives and its role in the evaluation of the safety of veterinary drug residues in foods."@en ;
+	obo:IAO_0000114 obo:IAO_0000122 ;
+	obo:IAO_0000115 "An entity that can bear roles, has members, and has a set of organization rules. Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members."@en ;
+	obo:IAO_0000116 """BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
 
 1) there are organization_member_roles (president, treasurer, branch
 editor), with individual persons as bearers
@@ -486,464 +341,592 @@ This leads to my proposal: We define organization through the statements 1 -
 current place in the is_a hierarchy (material entity) or move it up to
 'continuant'. We leave further clarifications to BFO, and close this issue
 for now."""@en ;
-                
-                obo:IAO_0000112 "PMID: 16353909.AAPS J. 2005 Sep 22;7(2):E274-80. Review. The joint food and agriculture organization of the United Nations/World Health Organization Expert Committee on Food Additives and its role in the evaluation of the safety of veterinary drug residues in foods."@en ;
-                
-                obo:IAO_0000111 "organization"@en ;
-                
-                obo:IAO_0000114 obo:IAO_0000122 .
+	obo:IAO_0000117 "PERSON: Alan Ruttenberg"^^xsd:string , "PERSON: Bjoern Peters"^^xsd:string , "PERSON: Philippe Rocca-Serra"^^xsd:string , "PERSON: Susanna Sansone"^^xsd:string ;
+	obo:IAO_0000119 "GROUP: OBI"^^xsd:string ;
+	rdfs:label "organization"@en .
+# 
+# http://purl.obolibrary.org/obo/OBI_0000471
+
+obo:OBI_0000471 a owl:Class ;
+	rdfs:subClassOf obo:OBI_0000011 ;
+	rdfs:comment "Used as the class for experiments. From OBO foundry: a planned process that realizes the concretization of a study design." , "We assume that all experiments in the RD-Connect platform are planned processes based on a study design." ;
+	rdfs:label "Experiment" , "study design execution" .
+# 
+# http://purl.obolibrary.org/obo/OBI_0100051
+
+obo:OBI_0100051 a owl:Class ;
+	owl:equivalentClass _:genid6 .
+
+_:genid6 a owl:Restriction ;
+	owl:onProperty obo:RO_0000087 ;
+	owl:someValuesFrom obo:OBI_0000112 .
+
+obo:OBI_0100051 rdfs:comment "From EFO: A material which is obtained and stored for potential use during an investigation." , """Sample and specimen seem to be used interchangably in our domain, but in ontologies these terms typically refer to different concepts. After discussing with David van Enckevort it seems that 'specimen' is the correct concept for the RD model. 'Sample' is used to denote a subset of things to represent a population. These are not specimen. 
+Subclasses of Specimen may still have 'sample' as their label, if that is the term used in the resource from which it comes (e.g. EGA samples).""" ;
+	rdfs:label "Specimen" .
+# 
+# http://purl.obolibrary.org/obo/OBI_1110087
+
+obo:OBI_1110087 a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000023 ;
+	rdfs:comment """An instance of this class represents the role of donor.
+This class is from the Ontology of Biomedical Investigations (OBI) that is also used in the biobank ontology (OBIB): a role which inheres in an organism or part thereof from which any part including cell, organ or tissue is removed with the intention that the donated part will be placed into another organism and/or cultured in vitro.""" ;
+	rdfs:label "Donor role" .
+# 
+# http://purl.obolibrary.org/obo/OGMS_0000023
+
+obo:OGMS_0000023 a owl:Class ;
+	metadata:prefixIRI "OGMS:0000023"^^xsd:string ;
+	obo:IAO_0000111 "phenotype" ;
+	obo:IAO_0000115 "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species."@en ;
+	obo:IAO_0000412 obo:ogms.owl ;
+	rdfs:label "phenotype" .
+# 
+# http://purl.obolibrary.org/obo/OMIABIS_0000000
+
+obo:OMIABIS_0000000 a owl:Class ;
+	rdfs:comment "Biobank as defined by OBIB: A biobank is a collection of samples of biological substances (e.g. tissue, blood, DNA) which are linked to data about the samples and their donors. They have a dual nature as collections of samples and data." ;
+	rdfs:label "Biobank sample or data collection" .
+# 
+# http://purl.obolibrary.org/obo/OMIABIS_0000003
+
+obo:OMIABIS_0000003 a owl:Class ;
+	rdfs:subClassOf obo:IAO_0020000 ;
+	rdfs:comment "Biobank name as defined by OBIB. Also intended for biobank identifiers." ;
+	rdfs:label "biobank proper name" .
+# 
+# http://purl.obolibrary.org/obo/OMIABIS_0000010
+
+obo:OMIABIS_0000010 a owl:Class ;
+	rdfs:subClassOf obo:OBI_0000245 ;
+	metadata:prefixIRI "OMIABIS:0000010"^^xsd:string ;
+	obo:IAO_0000115 "An organization bearing legal personality that ownes or adminstrates a biobank." , "An organization bearing legal personality that ownes or adminstrates a biobank."@en ;
+	obo:IAO_0000117 "Mathias Brochhausen" ;
+	obo:IAO_0000118 "biobank juristic person"@en ;
+	rdfs:label "Biobank organization"@en ;
+	rdfs:seeAlso "http://purl.obolibrary.org/obo/ERO_0001844"^^xsd:anyURI .
+# 
+# http://purl.obolibrary.org/obo/OMIABIS_0001002
+
+obo:OMIABIS_0001002 a owl:Class ;
+	metadata:prefixIRI "OMIABIS:0001002"^^xsd:string ;
+	obo:IAO_0000115 "A data set of collected secondary data related to patients with a specific diagnosis, condition, or procedure and plays an important role in post marketing surveillance of pharmaceuticals."@en ;
+	obo:IAO_0000117 "Alice Nzinga"@en , "Martin Fransson"@en ;
+	obo:IAO_0000118 "patient register data"@en ;
+	rdfs:comment "It can be said to be a formal record of an internationally agreed minimum amount of information about clinical trial."@en , "Note by Marco: I did not find a concept pertaining to a patient registry that was modelled in an equivalent way as 'biobank sample or data collection'. In OBIB 'patient registry data' and 'biobank sample or data collection' are in different branches." ;
+	rdfs:label "patient registry data"@en .
+# 
+# http://purl.obolibrary.org/obo/OMIABIS_0001046
+
+obo:OMIABIS_0001046 a owl:Class ;
+	rdfs:subClassOf obo:IAO_0020000 ;
+	rdfs:comment "specimen ID as defined by OBIB" ;
+	rdfs:label "specimen ID" .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/a2cec272_351f_4d86_9bf7_bbc61bfc31cf
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/a2cec272_351f_4d86_9bf7_bbc61bfc31cf> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/225c02c7_b5eb_47e7_8fc5_5b01056907a0> ;
+	rdfs:label "Normal karyotype"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/a6c6a8e9_2a60_4adc_8e46_876c539acd4e
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/a6c6a8e9_2a60_4adc_8e46_876c539acd4e> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/13bcf65a_381d_4719_a4e5_36f47b519ca6> ;
+	rdfs:label "Normal molecular karyotype"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/aba6818a_6543_4380_b4db_b6ac22ab3a6d
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/aba6818a_6543_4380_b4db_b6ac22ab3a6d> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/ff4a3698_9829_48ef_9ee0_6972a54a9894> ;
+	rdfs:label "Deletion imbalance"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/b38d73b3_462e_414c_bd40_a10105889c7d
 
+<http://rdf.biosemantics.org/ontologies/rd-connect/b38d73b3_462e_414c_bd40_a10105889c7d> a owl:Class ;
+	rdfs:subClassOf obo:OBI_0100051 ;
+	obo:IAO_0000115 "A Specimen containing Leukocytes"@en ;
+	rdfs:label "Leukocyte Specimen"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/bf26941c_a1e3_47ca_8995_4ef0b2b58477
 
+<http://rdf.biosemantics.org/ontologies/rd-connect/bf26941c_a1e3_47ca_8995_4ef0b2b58477> a owl:Class ;
+	rdfs:subClassOf obo:OBI_0100051 ;
+	obo:IAO_0000115 "A specimen containing DNA"@en ;
+	rdfs:label "DNA Specimen"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742
 
-###  http://purl.obolibrary.org/obo/OBI_0000471
+<http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742> a owl:Class ;
+	owl:equivalentClass _:genid7 .
 
-obo:OBI_0000471 rdf:type owl:Class ;
-                
-                rdfs:label "Experiment" ,
-                           "study design execution" ;
-                
-                rdfs:subClassOf obo:OBI_0000011 ;
-                
-                rdfs:comment "We assume that all experiments in the RD-Connect platform are planned processes based on a study design." ,
-                             "Used as the class for experiments. From OBO foundry: a planned process that realizes the concretization of a study design." .
+_:genid7 owl:intersectionOf _:genid10 .
 
+_:genid10 a rdf:List ;
+	rdf:first obo:IAO_0020000 ;
+	rdf:rest _:genid8 .
 
+_:genid8 a rdf:List ;
+	rdf:first _:genid9 .
 
-###  http://purl.obolibrary.org/obo/OBI_0100051
+_:genid9 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom obo:NCBITaxon_9606 .
 
-obo:OBI_0100051 rdf:type owl:Class ;
-                
-                rdfs:label "Specimen" ;
-                
-                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                      owl:onProperty obo:RO_0000087 ;
-                                      owl:someValuesFrom obo:OBI_0000112
-                                    ] ;
-                
-                rdfs:comment "From EFO: A material which is obtained and stored for potential use during an investigation." ,
-                             """Sample and specimen seem to be used interchangably in our domain, but in ontologies these terms typically refer to different concepts. After discussing with David van Enckevort it seems that 'specimen' is the correct concept for the RD model. 'Sample' is used to denote a subset of things to represent a population. These are not specimen. 
-Subclasses of Specimen may still have 'sample' as their label, if that is the term used in the resource from which it comes (e.g. EGA samples).""" .
+_:genid8 rdf:rest rdf:nil .
 
+_:genid7 a owl:Class .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/d212d920_6507_45fc_9751_830485f89425
 
+<http://rdf.biosemantics.org/ontologies/rd-connect/d212d920_6507_45fc_9751_830485f89425> a owl:Class ;
+	owl:equivalentClass _:genid11 .
 
-###  http://purl.obolibrary.org/obo/OBI_1110087
+_:genid11 owl:intersectionOf _:genid14 .
 
-obo:OBI_1110087 rdf:type owl:Class ;
-                
-                rdfs:label "Donor role" ;
-                
-                rdfs:subClassOf obo:BFO_0000023 ;
-                
-                rdfs:comment """An instance of this class represents the role of donor.
-This class is from the Ontology of Biomedical Investigations (OBI) that is also used in the biobank ontology (OBIB): a role which inheres in an organism or part thereof from which any part including cell, organ or tissue is removed with the intention that the donated part will be placed into another organism and/or cultured in vitro.""" .
+_:genid14 a rdf:List ;
+	rdf:first obo:NCBITaxon_9606 ;
+	rdf:rest _:genid12 .
 
+_:genid12 a rdf:List ;
+	rdf:first _:genid13 .
 
+_:genid13 a owl:Restriction ;
+	owl:onProperty obo:RO_0000087 ;
+	owl:someValuesFrom obo:OBI_0000093 .
 
-###  http://purl.obolibrary.org/obo/OGMS_0000023
+_:genid12 rdf:rest rdf:nil .
 
-obo:OGMS_0000023 rdf:type owl:Class ;
-                 
-                 rdfs:label "phenotype" ;
-                 
-                 metadata:prefixIRI "OGMS:0000023"^^xsd:string ;
-                 
-                 obo:IAO_0000111 "phenotype" ;
-                 
-                 obo:IAO_0000115 "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species."@en ;
-                 
-                 obo:IAO_0000412 obo:ogms.owl .
+_:genid11 a owl:Class .
 
+<http://rdf.biosemantics.org/ontologies/rd-connect/d212d920_6507_45fc_9751_830485f89425> rdfs:subClassOf obo:NCBITaxon_9606 ;
+	rdfs:comment "An instance of this class is a person who has the role of patient" ;
+	rdfs:label "Patient"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/de2bc1a8_3cdf_4086_9021_abfedf7fbefd
 
+<http://rdf.biosemantics.org/ontologies/rd-connect/de2bc1a8_3cdf_4086_9021_abfedf7fbefd> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/aba6818a_6543_4380_b4db_b6ac22ab3a6d> , <http://rdf.biosemantics.org/ontologies/rd-connect/31076897_680a_44ce_ba23_67406c13fbbb> ;
+	rdfs:label "Duplication and deletion imbalance"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/e961c95d_6559_4b34_a1a9_1de2b8eb4384
 
-###  http://purl.obolibrary.org/obo/OMIABIS_0000000
+<http://rdf.biosemantics.org/ontologies/rd-connect/e961c95d_6559_4b34_a1a9_1de2b8eb4384> a owl:Class ;
+	owl:equivalentClass _:genid15 .
 
-obo:OMIABIS_0000000 rdf:type owl:Class ;
-                    
-                    rdfs:label "Biobank sample or data collection" ;
-                    
-                    rdfs:comment "Biobank as defined by OBIB: A biobank is a collection of samples of biological substances (e.g. tissue, blood, DNA) which are linked to data about the samples and their donors. They have a dual nature as collections of samples and data." .
+_:genid15 owl:intersectionOf _:genid18 .
 
-
-
-###  http://purl.obolibrary.org/obo/OMIABIS_0000003
+_:genid18 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid16 .
 
-obo:OMIABIS_0000003 rdf:type owl:Class ;
-                    
-                    rdfs:label "biobank proper name" ;
-                    
-                    rdfs:subClassOf obo:IAO_0020000 ;
-                    
-                    rdfs:comment "Biobank name as defined by OBIB. Also intended for biobank identifiers." .
+_:genid16 a rdf:List ;
+	rdf:first _:genid17 .
 
+_:genid17 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom obo:OMIABIS_0001002 .
 
+_:genid16 rdf:rest rdf:nil .
 
-###  http://purl.obolibrary.org/obo/OMIABIS_0000010
+_:genid15 a owl:Class .
 
-obo:OMIABIS_0000010 rdf:type owl:Class ;
-                    
-                    rdfs:label "Biobank organization"@en ;
-                    
-                    rdfs:subClassOf obo:OBI_0000245 ;
-                    
-                    metadata:prefixIRI "OMIABIS:0000010"^^xsd:string ;
-                    
-                    rdfs:seeAlso "http://purl.obolibrary.org/obo/ERO_0001844"^^xsd:anyURI ;
-                    
-                    obo:IAO_0000117 "Mathias Brochhausen" ;
-                    
-                    obo:IAO_0000115 "An organization bearing legal personality that ownes or adminstrates a biobank." ,
-                                    "An organization bearing legal personality that ownes or adminstrates a biobank."@en ;
-                    
-                    obo:IAO_0000118 "biobank juristic person"@en .
-
-
-
-###  http://purl.obolibrary.org/obo/OMIABIS_0001002
-
-obo:OMIABIS_0001002 rdf:type owl:Class ;
-                    
-                    rdfs:label "patient registry data"@en ;
-                    
-                    metadata:prefixIRI "OMIABIS:0001002"^^xsd:string ;
-                    
-                    rdfs:comment "Note by Marco: I did not find a concept pertaining to a patient registry that was modelled in an equivalent way as 'biobank sample or data collection'. In OBIB 'patient registry data' and 'biobank sample or data collection' are in different branches." ;
-                    
-                    obo:IAO_0000115 "A data set of collected secondary data related to patients with a specific diagnosis, condition, or procedure and plays an important role in post marketing surveillance of pharmaceuticals."@en ;
-                    
-                    obo:IAO_0000117 "Alice Nzinga"@en ;
-                    
-                    rdfs:comment "It can be said to be a formal record of an internationally agreed minimum amount of information about clinical trial."@en ;
-                    
-                    obo:IAO_0000117 "Martin Fransson"@en ;
-                    
-                    obo:IAO_0000118 "patient register data"@en .
-
-
-
-###  http://purl.obolibrary.org/obo/OMIABIS_0001046
-
-obo:OMIABIS_0001046 rdf:type owl:Class ;
-                    
-                    rdfs:label "specimen ID" ;
-                    
-                    rdfs:subClassOf obo:IAO_0020000 ;
-                    
-                    rdfs:comment "specimen ID as defined by OBIB" .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/c8473177_ed3a_45c8_9e51_60c15f0d8742> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( obo:IAO_0020000
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom obo:NCBITaxon_9606
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/d212d920_6507_45fc_9751_830485f89425
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/d212d920_6507_45fc_9751_830485f89425> rdf:type owl:Class ;
-                                                                                         
-                                                                                         rdfs:label "Patient"@en ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( obo:NCBITaxon_9606
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:RO_0000087 ;
-                                                                                                                                      owl:someValuesFrom obo:OBI_0000093
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf obo:NCBITaxon_9606 ;
-                                                                                         
-                                                                                         rdfs:comment "An instance of this class is a person who has the role of patient" .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/e961c95d_6559_4b34_a1a9_1de2b8eb4384
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/e961c95d_6559_4b34_a1a9_1de2b8eb4384> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom obo:OMIABIS_0001002
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/1a64601d_d26f_4bf1_8911_4c372c2053be
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/1a64601d_d26f_4bf1_8911_4c372c2053be> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom obo:OBI_0000471
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom obo:OBI_0100051
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> ,
-                                                                                                         obo:OMIABIS_0001046 .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/27f64853_1c9c_476c_8e58_e5b01e3d1afa
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/27f64853_1c9c_476c_8e58_e5b01e3d1afa> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom <http://rdf.biosemantics.org/ontologies/rd-connect/d212d920_6507_45fc_9751_830485f89425>
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> ;
-                                                                                         
-                                                                                         rdfs:comment "An instance of this class represents an identifier for a person who has the role of patient." .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30> rdf:type owl:Class ;
-                                                                                         
-                                                                                         rdfs:label "Human donor"@en ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( obo:NCBITaxon_9606
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:RO_0000087 ;
-                                                                                                                                      owl:someValuesFrom obo:OBI_1110087
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf obo:NCBITaxon_9606 .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/5aeda71b_13d1_4d3a_a582_b0426d0b58a3
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/5aeda71b_13d1_4d3a_a582_b0426d0b58a3> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom obo:ERO_0001843
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/6e18d2bd_cd20_468b_a508_fab520841b93
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/6e18d2bd_cd20_468b_a508_fab520841b93> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                                                           owl:intersectionOf ( obo:NCBITaxon_9606
-                                                                                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                                                                                  owl:onProperty obo:RO_0000086 ;
-                                                                                                                                                                                  owl:someValuesFrom obo:OGMS_0000023
-                                                                                                                                                                                ]
-                                                                                                                                                                              )
-                                                                                                                                                         ]
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom <http://rdf.biosemantics.org/ontologies/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30>
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/666d2bc5_b025_4e59_a8ef_d2b162afbf63
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/666d2bc5_b025_4e59_a8ef_d2b162afbf63> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom obo:OMIABIS_0000000
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf obo:OMIABIS_0000003 .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/8a88e6f9_970c_45a6_bb60_f31329c71914
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/8a88e6f9_970c_45a6_bb60_f31329c71914> rdf:type owl:Class ;
-                                                                                         
-                                                                                         rdfs:label "Experiment"@en ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://www.openarchives.org/ore/terms/Aggregation> ;
-                                                                                         
-                                                                                         rdfs:comment "Experiment in the sense of an aggregate of resources associated with an experiment as refered to from the RD-Connect platform, such as samples, data producing experiments, data, etc.. (Thanks to David van Enckevort for his feedback)." ,
-                                                                                                      "Future work could include further extension of Research Object support such to enable annotation of aggregates and aggregated resources, and import and export or research object bundles." .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/85f0b0ee_ac93_4149_9c68_b2b1577d28c0
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/85f0b0ee_ac93_4149_9c68_b2b1577d28c0> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom obo:OMIABIS_0000010
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> .
-
-
-
-###  http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475
-
-<http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475> rdf:type owl:Class ;
-                                                                                         
-                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                                               owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty obo:IAO_0000219 ;
-                                                                                                                                      owl:someValuesFrom <http://rdf.biosemantics.org/ontologies/rd-connect/8a88e6f9_970c_45a6_bb60_f31329c71914>
-                                                                                                                                    ]
-                                                                                                                                  )
-                                                                                                             ] ;
-                                                                                         
-                                                                                         rdfs:subClassOf <http://edamontology.org/data_0842> .
-[ rdf:type owl:Axiom ;
-  rdfs:comment "NB keep in mind that 'Experiment' here refers to the use in the RD Connect platform to denote an aggregate of resources." ;
-  owl:annotatedSource <http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Class ;
-                        owl:intersectionOf ( <http://edamontology.org/data_0842>
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty obo:IAO_0000219 ;
-                                               owl:someValuesFrom <http://rdf.biosemantics.org/ontologies/rd-connect/8a88e6f9_970c_45a6_bb60_f31329c71914>
-                                             ]
-                                           )
-                      ]
-] .
-
-
-
-###  http://www.openarchives.org/ore/terms/AggregatedResource
-
-<http://www.openarchives.org/ore/terms/AggregatedResource> rdf:type owl:Class ;
-                                                           
-                                                           rdfs:label "Aggregated Resource" ;
-                                                           
-                                                           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <http://www.openarchives.org/ore/terms/isAggregatedBy> ;
-                                                                                 owl:someValuesFrom <http://www.openarchives.org/ore/terms/Aggregation>
-                                                                               ] ;
-                                                           
-                                                           rdfs:comment "NB this class does nothing more than say that an entity is aggregated in at least one aggregate, whatever the sematic type of that entity is. (Rephrased from note in Research Object model.)" ,
-                                                                        "Aggregated Resource as defined by ORE and used by the Research Object model" .
-[ rdf:type owl:Axiom ;
-  rdfs:comment "Not sure why ORE or the Research Object model do not define this. ToDo: check if this this is correct." ;
-  owl:annotatedSource <http://www.openarchives.org/ore/terms/AggregatedResource> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.openarchives.org/ore/terms/isAggregatedBy> ;
-                        owl:someValuesFrom <http://www.openarchives.org/ore/terms/Aggregation>
-                      ]
-] .
-
-
-
-###  http://www.openarchives.org/ore/terms/Aggregation
-
-<http://www.openarchives.org/ore/terms/Aggregation> rdf:type owl:Class ;
-                                                    
-                                                    rdfs:label "Aggregation" ;
-                                                    
-                                                    owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <http://www.openarchives.org/ore/terms/aggregates> ;
-                                                                          owl:someValuesFrom owl:Thing
-                                                                        ] ;
-                                                    
-                                                    rdfs:seeAlso "http://researchobject.org"^^xsd:anyURI ;
-                                                    
-                                                    rdfs:comment "Aggregation from the ORE model as used by the Research Object model" ;
-                                                    
-                                                    rdfs:seeAlso "http://www.openarchives.org/ore/terms" .
-[ rdf:type owl:Axiom ;
-  rdfs:comment "Not sure why ORE or the Research Object model do not define this. ToDo: check if this this is correct." ;
-  owl:annotatedSource <http://www.openarchives.org/ore/terms/Aggregation> ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.openarchives.org/ore/terms/aggregates> ;
-                        owl:someValuesFrom owl:Thing
-                      ]
-] .
-
-
-
-
-###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+<http://rdf.biosemantics.org/ontologies/rd-connect/e961c95d_6559_4b34_a1a9_1de2b8eb4384> rdfs:subClassOf <http://edamontology.org/data_0842> .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/ff4a3698_9829_48ef_9ee0_6972a54a9894
 
+<http://rdf.biosemantics.org/ontologies/rd-connect/ff4a3698_9829_48ef_9ee0_6972a54a9894> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/13bcf65a_381d_4719_a4e5_36f47b519ca6> ;
+	rdfs:label "Abnormal molecular karyotype"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/00881070_2100_450a_ba57_5f7ac43c25ba
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/00881070_2100_450a_ba57_5f7ac43c25ba> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/aba6818a_6543_4380_b4db_b6ac22ab3a6d> ;
+	rdfs:label "Interstitial deletion imbalance"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/1a64601d_d26f_4bf1_8911_4c372c2053be
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/1a64601d_d26f_4bf1_8911_4c372c2053be> a owl:Class ;
+	owl:equivalentClass _:genid19 .
+
+_:genid19 owl:intersectionOf _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first _:genid21 .
+
+_:genid21 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom obo:OBI_0000471 .
+
+_:genid20 rdf:rest rdf:nil .
+
+_:genid19 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/1a64601d_d26f_4bf1_8911_4c372c2053be> rdfs:subClassOf <http://edamontology.org/data_0842> .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/1c2b44e2_fc77_4c99_848c_ab7f8934d24a
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/1c2b44e2_fc77_4c99_848c_ab7f8934d24a> a owl:Class ;
+	rdfs:subClassOf obo:OBI_0100051 ;
+	obo:IAO_0000115 "A Specimen containing Fibroblasts"@en ;
+	rdfs:label "Fibroblast Specimen"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/13bcf65a_381d_4719_a4e5_36f47b519ca6
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/13bcf65a_381d_4719_a4e5_36f47b519ca6> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/7b01acd8_f1f5_4f2b_944e_49e1d35000f7> ;
+	rdfs:label "Molecular karyotype"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a> a owl:Class ;
+	owl:equivalentClass _:genid23 .
+
+_:genid23 owl:intersectionOf _:genid26 .
+
+_:genid26 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid24 .
+
+_:genid24 a rdf:List ;
+	rdf:first _:genid25 .
+
+_:genid25 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom obo:OBI_0100051 .
+
+_:genid24 rdf:rest rdf:nil .
+
+_:genid23 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/21f6df30_1f72_45fb_bfc1_2b3d1af1410a> rdfs:subClassOf <http://edamontology.org/data_0842> , obo:OMIABIS_0001046 .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/225c02c7_b5eb_47e7_8fc5_5b01056907a0
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/225c02c7_b5eb_47e7_8fc5_5b01056907a0> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/7b01acd8_f1f5_4f2b_944e_49e1d35000f7> ;
+	rdfs:label "Karyotype"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/27f64853_1c9c_476c_8e58_e5b01e3d1afa
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/27f64853_1c9c_476c_8e58_e5b01e3d1afa> a owl:Class ;
+	owl:equivalentClass _:genid27 .
+
+_:genid27 owl:intersectionOf _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first _:genid29 .
+
+_:genid29 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom <http://rdf.biosemantics.org/ontologies/rd-connect/d212d920_6507_45fc_9751_830485f89425> .
+
+_:genid28 rdf:rest rdf:nil .
+
+_:genid27 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/27f64853_1c9c_476c_8e58_e5b01e3d1afa> rdfs:subClassOf <http://edamontology.org/data_0842> ;
+	rdfs:comment "An instance of this class represents an identifier for a person who has the role of patient." .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30> a owl:Class ;
+	owl:equivalentClass _:genid31 .
+
+_:genid31 owl:intersectionOf _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first obo:NCBITaxon_9606 ;
+	rdf:rest _:genid32 .
+
+_:genid32 a rdf:List ;
+	rdf:first _:genid33 .
+
+_:genid33 a owl:Restriction ;
+	owl:onProperty obo:RO_0000087 ;
+	owl:someValuesFrom obo:OBI_1110087 .
+
+_:genid32 rdf:rest rdf:nil .
+
+_:genid31 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30> rdfs:subClassOf obo:NCBITaxon_9606 ;
+	rdfs:label "Human donor"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/31076897_680a_44ce_ba23_67406c13fbbb
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/31076897_680a_44ce_ba23_67406c13fbbb> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/ff4a3698_9829_48ef_9ee0_6972a54a9894> ;
+	rdfs:label "Duplication imbalance"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/36cf6663_cb61_4c63_b68d_3bc7282f43fa
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/36cf6663_cb61_4c63_b68d_3bc7282f43fa> a owl:Class ;
+	rdfs:subClassOf obo:OGMS_0000023 ;
+	obo:IAO_0000115 "A phenotypic characteristic relating to the form or structure of an organism"@en ;
+	rdfs:label "Morphology"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/4a421526_7b34_424f_b44d_435f6c5ed816
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/4a421526_7b34_424f_b44d_435f6c5ed816> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/6422a6c7_c9e4_4fe3_bc28_5e30c38e18bb> ;
+	rdfs:label "Ring 14 Karyotype"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/5aeda71b_13d1_4d3a_a582_b0426d0b58a3
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/5aeda71b_13d1_4d3a_a582_b0426d0b58a3> a owl:Class ;
+	owl:equivalentClass _:genid35 .
+
+_:genid35 owl:intersectionOf _:genid38 .
+
+_:genid38 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid36 .
+
+_:genid36 a rdf:List ;
+	rdf:first _:genid37 .
+
+_:genid37 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom obo:ERO_0001843 .
+
+_:genid36 rdf:rest rdf:nil .
+
+_:genid35 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/5aeda71b_13d1_4d3a_a582_b0426d0b58a3> rdfs:subClassOf <http://edamontology.org/data_0842> .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/5998bfd4_721c_45c2_8fd7_6eb3ecf301cb
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/5998bfd4_721c_45c2_8fd7_6eb3ecf301cb> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/aba6818a_6543_4380_b4db_b6ac22ab3a6d> ;
+	rdfs:label "Terminal deletion imbalance"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/6e18d2bd_cd20_468b_a508_fab520841b93
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/6e18d2bd_cd20_468b_a508_fab520841b93> a owl:Class ;
+	owl:equivalentClass _:genid39 .
+
+_:genid39 owl:intersectionOf _:genid46 .
+
+_:genid46 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid40 .
+
+_:genid40 a rdf:List ;
+	rdf:first _:genid41 .
+
+_:genid41 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom _:genid42 .
+
+_:genid42 owl:intersectionOf _:genid45 .
+
+_:genid45 a rdf:List ;
+	rdf:first obo:NCBITaxon_9606 ;
+	rdf:rest _:genid43 .
+
+_:genid43 a rdf:List ;
+	rdf:first _:genid44 .
+
+_:genid44 a owl:Restriction ;
+	owl:onProperty obo:RO_0000086 ;
+	owl:someValuesFrom obo:OGMS_0000023 .
+
+_:genid43 rdf:rest rdf:nil .
+
+_:genid42 a owl:Class .
+
+_:genid40 rdf:rest rdf:nil .
+
+_:genid39 a owl:Class .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71> a owl:Class ;
+	owl:equivalentClass _:genid47 .
+
+_:genid47 owl:intersectionOf _:genid50 .
+
+_:genid50 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid48 .
+
+_:genid48 a rdf:List ;
+	rdf:first _:genid49 .
+
+_:genid49 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom <http://rdf.biosemantics.org/ontologies/rd-connect/3e2b3205_96d8_4497_86c2_5ca69f62ab30> .
+
+_:genid48 rdf:rest rdf:nil .
+
+_:genid47 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/61e6d88e_0a2e_4bc9_9aed_e3a6a5170a71> rdfs:subClassOf <http://edamontology.org/data_0842> .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/6422a6c7_c9e4_4fe3_bc28_5e30c38e18bb
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/6422a6c7_c9e4_4fe3_bc28_5e30c38e18bb> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/225c02c7_b5eb_47e7_8fc5_5b01056907a0> ;
+	rdfs:label "Abnormal karyotype"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/666d2bc5_b025_4e59_a8ef_d2b162afbf63
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/666d2bc5_b025_4e59_a8ef_d2b162afbf63> a owl:Class ;
+	owl:equivalentClass _:genid51 .
+
+_:genid51 owl:intersectionOf _:genid54 .
+
+_:genid54 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid52 .
+
+_:genid52 a rdf:List ;
+	rdf:first _:genid53 .
+
+_:genid53 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom obo:OMIABIS_0000000 .
+
+_:genid52 rdf:rest rdf:nil .
+
+_:genid51 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/666d2bc5_b025_4e59_a8ef_d2b162afbf63> rdfs:subClassOf obo:OMIABIS_0000003 .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/7b01acd8_f1f5_4f2b_944e_49e1d35000f7
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/7b01acd8_f1f5_4f2b_944e_49e1d35000f7> a owl:Class ;
+	rdfs:subClassOf <http://rdf.biosemantics.org/ontologies/rd-connect/36cf6663_cb61_4c63_b68d_3bc7282f43fa> ;
+	rdfs:label "Cytogenetic morphology"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/744cab87_bba0_465b_9b61_31020381ffe1
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/744cab87_bba0_465b_9b61_31020381ffe1> a owl:Class ;
+	rdfs:subClassOf obo:OGMS_0000023 ;
+	obo:IAO_0000115 "A phenotypic characteristic relating to the observed behaviour of an organism"@en ;
+	rdfs:label "Behaviour"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/8a88e6f9_970c_45a6_bb60_f31329c71914
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/8a88e6f9_970c_45a6_bb60_f31329c71914> a owl:Class ;
+	rdfs:subClassOf <http://www.openarchives.org/ore/terms/Aggregation> ;
+	rdfs:comment "Experiment in the sense of an aggregate of resources associated with an experiment as refered to from the RD-Connect platform, such as samples, data producing experiments, data, etc.. (Thanks to David van Enckevort for his feedback)." , "Future work could include further extension of Research Object support such to enable annotation of aggregates and aggregated resources, and import and export or research object bundles." ;
+	rdfs:label "Experiment"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/85f0b0ee_ac93_4149_9c68_b2b1577d28c0
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/85f0b0ee_ac93_4149_9c68_b2b1577d28c0> a owl:Class ;
+	owl:equivalentClass _:genid55 .
+
+_:genid55 owl:intersectionOf _:genid58 .
+
+_:genid58 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid56 .
+
+_:genid56 a rdf:List ;
+	rdf:first _:genid57 .
+
+_:genid57 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom obo:OMIABIS_0000010 .
+
+_:genid56 rdf:rest rdf:nil .
+
+_:genid55 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/85f0b0ee_ac93_4149_9c68_b2b1577d28c0> rdfs:subClassOf <http://edamontology.org/data_0842> .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/897e877b_4710_4c65_b0ba_aa8b72104104
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/897e877b_4710_4c65_b0ba_aa8b72104104> a owl:Class ;
+	rdfs:subClassOf obo:OBI_0100051 ;
+	obo:IAO_0000115 "A Specimen containing Lymphoblasts"@en ;
+	rdfs:label "Lymphoblast Specimen"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/9d10cdcc_c695_477c_9ae6_0e3fa57dfd01
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/9d10cdcc_c695_477c_9ae6_0e3fa57dfd01> a owl:Class ;
+	rdfs:subClassOf obo:OBI_0100051 ;
+	obo:IAO_0000115 "A Specimen of blood"@en ;
+	rdfs:label "Blood Specimen"@en .
+# 
+# http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475> a owl:Class ;
+	owl:equivalentClass _:genid59 .
+
+_:genid59 owl:intersectionOf _:genid62 .
+
+_:genid62 a rdf:List ;
+	rdf:first <http://edamontology.org/data_0842> ;
+	rdf:rest _:genid60 .
+
+_:genid60 a rdf:List ;
+	rdf:first _:genid61 .
+
+_:genid61 a owl:Restriction ;
+	owl:onProperty obo:IAO_0000219 ;
+	owl:someValuesFrom <http://rdf.biosemantics.org/ontologies/rd-connect/8a88e6f9_970c_45a6_bb60_f31329c71914> .
+
+_:genid60 rdf:rest rdf:nil .
+
+_:genid59 a owl:Class .
+
+<http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475> rdfs:subClassOf <http://edamontology.org/data_0842> .
+
+_:genid63 a owl:Axiom ;
+	owl:annotatedSource <http://rdf.biosemantics.org/ontologies/rd-connect/9ff02445_87f9_42a2_8ba9_05f67c8cb475> ;
+	owl:annotatedProperty owl:equivalentClass ;
+	owl:annotatedTarget _:genid59 ;
+	rdfs:comment "NB keep in mind that 'Experiment' here refers to the use in the RD Connect platform to denote an aggregate of resources." .
+# 
+# http://www.openarchives.org/ore/terms/AggregatedResource
+
+<http://www.openarchives.org/ore/terms/AggregatedResource> a owl:Class ;
+	owl:equivalentClass _:genid64 .
+
+_:genid64 a owl:Restriction ;
+	owl:onProperty <http://www.openarchives.org/ore/terms/isAggregatedBy> ;
+	owl:someValuesFrom <http://www.openarchives.org/ore/terms/Aggregation> .
+
+<http://www.openarchives.org/ore/terms/AggregatedResource> rdfs:comment "Aggregated Resource as defined by ORE and used by the Research Object model" , "NB this class does nothing more than say that an entity is aggregated in at least one aggregate, whatever the sematic type of that entity is. (Rephrased from note in Research Object model.)" ;
+	rdfs:label "Aggregated Resource" .
+
+_:genid65 a owl:Axiom ;
+	owl:annotatedSource <http://www.openarchives.org/ore/terms/AggregatedResource> ;
+	owl:annotatedProperty owl:equivalentClass ;
+	owl:annotatedTarget _:genid64 ;
+	rdfs:comment "Not sure why ORE or the Research Object model do not define this. ToDo: check if this this is correct." .
+# 
+# http://www.openarchives.org/ore/terms/Aggregation
+
+<http://www.openarchives.org/ore/terms/Aggregation> a owl:Class ;
+	owl:equivalentClass _:genid66 .
+
+_:genid66 a owl:Restriction ;
+	owl:onProperty <http://www.openarchives.org/ore/terms/aggregates> ;
+	owl:someValuesFrom owl:Thing .
+
+<http://www.openarchives.org/ore/terms/Aggregation> rdfs:comment "Aggregation from the ORE model as used by the Research Object model" ;
+	rdfs:label "Aggregation" ;
+	rdfs:seeAlso "http://researchobject.org"^^xsd:anyURI , "http://www.openarchives.org/ore/terms" .
+
+_:genid67 a owl:Axiom ;
+	owl:annotatedSource <http://www.openarchives.org/ore/terms/Aggregation> ;
+	owl:annotatedProperty owl:equivalentClass ;
+	owl:annotatedTarget _:genid66 ;
+	rdfs:comment "Not sure why ORE or the Research Object model do not define this. ToDo: check if this this is correct." .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
