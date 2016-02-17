@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://rdf.biosemantics.org/owl/2015/7/rdc-meta" uri="rdc-meta.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/iao/2015-02-23/iao.owl" uri="external-imports/iao.owl"/>
     <uri id="Imports Wizard Entry" name="http://rdf.biosemantics.org/owl/2015/6/rdc-core" uri="file:/home/rajaram/work/RDF/ontologies/rdc-core.owl"/>
     <uri id="User Entered Import Resolution" name="http://rdf.biosemantics.org/ontologies/rd-connect/rdc-core" uri="rdc-core.owl"/>
     <uri id="User Entered Import Resolution" name="http://rdf.biosemantics.org/owl/2015/6/rdc-core" uri="rdc-core.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1454601916667" name="http://rdf.biosemantics.org/owl/2015/7/rdc-example-instances" uri="rdc-example-instances.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1454601916667" name="http://rdf.biosemantics.org/owl/2015/7/rdc-mappings" uri="rdc-mappings.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1454601916667" name="http://rdf.biosemantics.org/owl/2015/7/rdc-meta-extended" uri="rdc-meta-extended.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1454601916667" name="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus" uri="rdc-thesaurus.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1455721212874" name="http://purl.obolibrary.org/obo/iao.owl" uri="external-imports/iao.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1455721212874" name="http://rdf.biosemantics.org/owl/2015/7/rdc-example-instances" uri="rdc-example-instances.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1455721212874" name="http://rdf.biosemantics.org/owl/2015/7/rdc-mappings" uri="rdc-mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1455721212874" name="http://rdf.biosemantics.org/owl/2015/7/rdc-meta-extended" uri="rdc-meta-extended.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1455721212874" name="http://rdf.biosemantics.org/owl/2015/7/rdc-thesaurus" uri="rdc-thesaurus.owl"/>
     </group>
 </catalog>
